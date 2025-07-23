@@ -106,3 +106,131 @@ body {
     font-weight: 400;
 }
 
+.section-hero {
+    display: grid;
+    grid-template-areas: "l m r"
+                         "l s r"
+                         "l s r"
+                         "l b r";
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    gap: 10px;
+    height: 756px;
+    margin-top: 92px;
+}
+
+.hero-left-image-box {
+    grid-area: l;
+    background-color: #e0e0e0;
+    height: 756px;
+    margin-right: 49px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    border-radius: 10px;
+}
+
+.sale-image-top {
+    grid-area: m;
+    background-color: #e0e0e0;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    border-radius: 10px;
+}
+
+.sale-image-top img {
+    height: 145px;
+    object-fit: contain;
+}
+
+.sale-text {
+    grid-area: s;
+    color: black;
+    height: 383px;
+    margin-block: 36px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.sale-text .ultimate div {
+    font-size: 91px;
+    font-weight: 500;
+    color: #484848;
+    line-height: 1;
+    justify-self: center;
+}
+
+.sale-text .ultimate span {
+    font-size: 187px;
+    color: transparent;
+    -webkit-text-stroke: 1px #484848;
+    font-weight: bold;
+    line-height: 1;
+    padding: 0;
+    margin: 0;
+    vertical-align: baseline;
+    margin-inline: auto;
+    /* padding: 10px; */
+}
+
+.sale-text .collection {
+    font-size: 20px;
+    color: #484848;
+    font-weight: 400;
+}
+
+.sale-text .btn {
+    margin-top: 19px;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 20px 59px;
+    background-color: #000;
+    border-radius: 10px;
+    color: #fff;
+    box-shadow: 0px 4px 30px 1px rgba(0, 0, 0, 0.3);
+}
+
+
+.sale-image-bottom {
+    grid-area: b;
+    background-color: blueviolet;
+    height: 150px;
+    border-radius: 10px;
+}
+
+.hero-right-image-box {
+    grid-area: r;
+    background-color: #e0e0e0;
+    height: 756px;
+    margin-left: 54px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    border-radius: 10px;
+}
+
+.hero-right-image-box img {
+    height: 568px;
+    object-fit: contain;
+}
+
+.sale-image-bottom img {
+    width: 100%;
+    object-fit: contain;
+}
+
+.section-collabs {
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.section-collabs .brands {
+    width: 196px;
+}
