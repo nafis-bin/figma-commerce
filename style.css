@@ -112,8 +112,8 @@ body {
                          "l s r"
                          "l s r"
                          "l b r";
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
+    /* grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr; */
     gap: 10px;
     height: 756px;
     margin-top: 92px;
@@ -225,6 +225,7 @@ body {
 }
 
 .section-collabs {
+    width: 100%;
     height: 200px;
     display: flex;
     align-items: center;
@@ -233,4 +234,12 @@ body {
 
 .section-collabs .brands {
     width: 196px;
+}
+
+.deals-container {
+    width: 100%;
+    height: 911px;
+    font-family: var(--fontFamily-poppins);
+    margin-block: 195px 150px;
+    background: linear-gradient(to right, #FFFFFF 0%, #FAFAFA 100%);
 }
