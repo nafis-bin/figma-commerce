@@ -695,6 +695,78 @@ body {
 }
 
 
+.peaky-info {
+    flex: 1;
+    width: 515px;
+    height: 100%;
+    padding-left: 150px;
+    padding-block: 60px;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    margin-left: 158px;
+    gap: 20px;
+    background-color: #DADADA;
+}
+
+.peaky-info .marker {
+    font-size: 16px;
+    color: #767676;
+}
+
+.peaky-info .title {
+    font-size: 46px;
+    font-family: var(--fontFamily-volkhov);
+    color: #484848;
+}
+
+.peaky-info .description-marker {
+    font-size: 16px;
+    color: #000;
+}
+
+.peaky-info .description {
+    font-size: 16px;
+    color: #767676;
+}
+
+.peaky-info .size {
+    display: flex;
+    font-size: 16px;
+    color: #767676;
+    gap: 15px;
+}
+
+.peaky-info .letter {
+    width: 53px;
+    height: 28px;
+    font-size: 16px;
+    border-radius: 10px;
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+}
+
+.peaky-info .price {
+    font-size: 28px;
+    font-weight: 500;
+}
+
+.peaky-info .button {
+    width: 207px;
+    height: 56px;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 16px 69px;
+    background-color: #000;
+    border-radius: 10px;
+    color: #fff;
+    box-shadow: 0px 4px 30px 1px rgba(0, 0, 0, 0.3);
+    justify-self: flex-start;
+    
+}
+
+
 .instagram-section {
     width: 100%;
     height: 611px;
