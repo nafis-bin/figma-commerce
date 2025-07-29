@@ -707,17 +707,23 @@ body {
     margin-left: 158px;
     gap: 20px;
     background-color: #DADADA;
+    
+
+    /* fix this */
+    /* transform: skew(-15deg, 0deg); */
 }
 
 .peaky-info .marker {
     font-size: 16px;
     color: #767676;
+    /* transform: skew(15deg, 0deg); */
 }
 
 .peaky-info .title {
     font-size: 46px;
     font-family: var(--fontFamily-volkhov);
     color: #484848;
+    /* transform: skew(15deg, 0deg); */
 }
 
 .peaky-info .description-marker {
@@ -1142,4 +1148,165 @@ footer {
 footer p {
     font-size: 12px;
     color: #484848;
+}
+
+
+
+.login-section {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-boxes {
+    width: 1720px;
+    height: 877px;
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+    gap: 140px;
+    border: 1px solid #dbdbdb;
+    border-radius: 0 30px 30px 0;
+}
+
+.login-section .img-container {
+    width: 850px;
+    height: 877px;
+}
+
+.login-section .img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.login-area {
+    height: 100%;
+    flex: 1;
+    /* background-color: cyan; */
+    margin-right: 80px;
+}
+
+.login-area .header {
+    margin-top: 60px;
+    font-size: 58px;
+    font-family: var(--fontFamily-volkhov);
+    color: #484848;
+}
+
+.login-section .input-container {
+    margin-top: 20px;
+}
+
+
+.login-section .login-area .input-container p {
+    margin-bottom: 18px;
+    font-size: 24px;
+    font-family: var(--fontFamily-volkhov);
+    color: #000;
+}
+
+/* .login-section .login-area .btn  {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+} */
+
+.login-section .login-area .btn .text {
+    font-size: 16px;
+}
+
+
+.login-section .login-area button .img-container {
+    width: 36px;
+    height: 36px;
+}
+
+.login-section .login-area button .img-container img {
+    width: 36px;
+    height: 36px;
+}
+
+.login-section .input-container .buttons {
+    display: flex;
+    align-items: center;
+    /* justify-content: space-between; */
+    gap: 50px;
+}
+
+.login-section .input-container .buttons .btn {
+    width: 270px;
+    height: 55px;
+    border: 1px solid #5b86e5;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-section .buttons .btn .text {
+    margin-left: 18px;
+}
+
+.login-section .or {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    margin-top: 40px;
+    margin-left: 238px;
+}
+
+.login-section .or .sep {
+    height: 5px;
+    width: 30px;
+    background-color: #838383;
+}
+
+.login-section .or-text {
+    font-size: 26px;
+    color: #838383;
+}
+
+.login-section .input-box {
+    width: 628px;
+    height: 40px;
+    border-bottom: 1px solid #9d9d9d;
+    color: #9d9d9d;
+    font-size: 26px;
+    margin-top: 40px;
+}
+
+.login-section .login-btn {
+    font-size: 16px;
+    font-weight: 500;
+    padding: 18px 256px;
+    background-color: #000;
+    color: #fff;
+    border-radius: 10px;
+    margin-top: 50px;
+    margin-left: 30px;
+}
+
+.login-section .login-btn.register {
+    font-size: 16px;
+    font-weight: 500;
+    padding: 18px 233px;
+    background-color: #fff;
+    color: #5b86eb;
+    border-radius: 10px;
+    margin-top: 30px;
+    margin-left: 30px;
+    border: 1px solid #5b86e5;
+}
+
+
+.login-section .forget {
+    color: #5b86e5;
+    bottom: -34px;
+    right: 0px;
+    font-size: 16px;
+    margin-top: 24px;
+    margin-left: 470px;
 }
