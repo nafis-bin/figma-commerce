@@ -1367,6 +1367,7 @@ footer p {
     font-size: 52px;
     font-family: var(--fontFamily-volkhov);
     font-weight: 400;
+    color: #484848;
 }
 
 .forget-section .text h3 {
@@ -1375,6 +1376,7 @@ footer p {
     align-self: flex-start;
     margin-left: 122px;
     margin-bottom: 30px;
+    color: #484848;
 }
 
 .forget-section .text .input-line {
@@ -1416,4 +1418,197 @@ footer p {
 .forget-section span {
     display: inline;
     color: #5b86eb;
+}
+
+
+
+
+
+.confirm-section {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+}
+
+.confirm-section .container {
+    width: 1500px;
+    height: 900px;
+    /* background-color: red; */
+    border-radius: 0 30px 30px 0;
+    display: flex;
+    gap: 100px;
+    border: 1px solid #dbdbdb;
+    box-shadow: 0px 1px 8px 0px rgba(0, 0, 0, 0.1);
+    /* border: 3px solid black; */
+    /* border-radius: 0px 30px 30px 0px; */
+}
+
+.confirm-section .img-container {
+    height: 100%;
+}
+
+
+.confirm-section .img-container img {
+    height: 100%;
+    object-fit: contain;
+}
+
+.confirm-section .text {
+    height: 100%;
+    flex: 1;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0px 30px 30px 0px;
+}
+
+.confirm-section .text h1 {
+    margin-top: 60px;
+    font-size: 52px;
+    font-family: var(--fontFamily-volkhov);
+    color: #484848;
+    font-weight: 400;
+}
+
+.confirm-section .text h3 {
+    font-size: 26px;
+    font-family: var(--fontFamily-volkhov);
+    margin-top: 180px;
+    color: #000;
+}
+
+
+.confirm-section .text .input-line {
+    width: 630px;
+    margin-top: 56px;
+}
+
+.confirm-section .text .input-line input {
+    width: 100%;
+    font-size: 24px;
+    color: #9d9d9d;
+    border-bottom: 1px solid #9d9d9d;
+    padding: 10px;
+}
+
+.confirm-section .code-btn {
+    color: #fff;
+    background-color: #000;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 10px;
+    width: 500px;
+    padding-block: 15px;
+    margin-left: 64px;
+    margin-top: 30px;
+}
+
+
+
+
+.confirm-section p {
+    margin-top: 30px;
+    font-size: 16px;
+    letter-spacing: 1.28px;
+    margin-left: 64px;
+}
+
+.confirm-section a {
+    display: inline;
+}
+
+.confirm-section span {
+    display: inline;
+    color: #5b86eb;
+} 
+
+
+.new-password-section {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+}
+
+.new-password-section .container {
+    width: 1500px;
+    height: 900px;
+    /* background-color: red; */
+    border-radius: 0 30px 30px 0;
+    display: flex;
+    gap: 100px;
+    border: 1px solid #dbdbdb;
+    box-shadow: 0px 1px 8px 0px rgba(0, 0, 0, 0.1);
+    /* border: 3px solid black; */
+    /* border-radius: 0px 30px 30px 0px; */
+}
+
+.new-password-section .img-container {
+    height: 100%;
+}
+
+
+.new-password-section .img-container img {
+    height: 100%;
+    object-fit: contain;
+}
+
+.new-password-section .text {
+    height: 100%;
+    flex: 1;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0px 30px 30px 0px;
+}
+
+.new-password-section .text h1 {
+    margin-top: 60px;
+    font-size: 52px;
+    font-family: var(--fontFamily-volkhov);
+    color: #484848;
+    font-weight: 400;
+}
+
+.new-password-section .text h3 {
+    font-size: 26px;
+    font-family: var(--fontFamily-volkhov);
+    margin-top: 180px;
+    color: #000;
+}
+
+
+.new-password-section .text .input-line {
+    width: 630px;
+    margin-top: 56px;
+}
+
+.new-password-section .text .input-line.confirm {
+    width: 630px;
+    margin-top: 30px;
+}
+
+.new-password-section .text .input-line input {
+    width: 100%;
+    font-size: 24px;
+    color: #9d9d9d;
+    border-bottom: 1px solid #9d9d9d;
+    padding: 10px;
+}
+
+.new-password-section .code-btn {
+    color: #fff;
+    background-color: #5b86e5;
+    font-size: 16px;
+    font-weight: 550;
+    border-radius: 10px;
+    width: 500px;
+    padding-block: 15px;
+    margin-left: 64px;
+    margin-top: 30px;
 }
