@@ -1613,3 +1613,58 @@ footer p {
     margin-left: 64px;
     margin-top: 30px;
 }
+
+
+.shop-section {
+    width: 1280px;
+    margin: 70px 320px;
+}
+
+
+.shop-section-header {
+    width: 100%;
+    height: 58px;
+    /* background-color: red; */
+}
+
+.shop-section .navlist {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.shop-section .navlist .logo {
+    font-size: 52px;
+    font-family: var(--fontFamily-volkhov);
+    color: #484848;
+}
+
+.shop-section .navlist .navlinks {
+    width: 430px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #484848;
+    font-size: 16px;
+}
+
+.shop-section .navlist .navicons {
+    width: 182px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #484848;
+    font-size: 16px;
+    padding: 12px;
+}
+
+.shop-section .navlist .navlinks li {
+    padding: 3px;
+}
+
+.shop-section .navlist .navlinks .active {
+    border-bottom: 2px solid black;
+}
+

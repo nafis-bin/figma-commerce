@@ -54,7 +54,7 @@
                         <span>SALE</span>
                     </div>
                     <div class="collection">NEW COLLECTION</div>
-                    <button class="btn">SHOP NOW</button>
+                    <button class="btn shop-now">SHOP NOW</button>
                 </div>
                 <div class="sale-image-bottom">
                     <img src="./images/image (1).png" alt="women laughing">
@@ -564,6 +564,11 @@
             window.localStorage.clear();
             window.location.href = './index.html';
         }
+    }
+
+    let shop = document.querySelector('.shop-now');
+    shop.onclick = () => {
+        window.location.href = './pages/shop.html'
     }
 </script>
 </body>
