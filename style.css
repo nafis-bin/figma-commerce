@@ -1668,3 +1668,132 @@ footer p {
     border-bottom: 2px solid black;
 }
 
+.shop-section .title {
+    width: 100%;
+    text-align: center;
+    margin-top: 78px;
+    font-family: var(--fontFamily-volkhov);
+    font-size: 42px;
+}
+
+.shop-section .location {
+    margin-top: 20px;
+    width: 130px;
+    height: 25px;
+    margin-inline: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.shop-section .location div {
+    font-size: 15px;
+    line-height: 22.5;
+}
+
+.shop-section .location img {
+    font-size: 9px;
+}
+
+.shop-section .main-section {
+    margin-top: 97px;
+    display: grid;
+    grid-template-columns: 322px 958px;
+}
+
+.shop-section .filter-section {
+    height: 1112px;
+    background-color: blue;
+}
+
+.shop-section .models-section {
+    height: 1720px;
+    background-color: red;
+}
+
+.shop-section .models-section .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: orange;
+    margin-bottom: 30px;
+}
+
+.shop-section .models-section .header .catagory {
+    font-size: 16px;
+    font-family: var(--fontFamily-volkhov);
+}
+
+.shop-section .models-section .header .icons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 10px;
+}
+.shop-section .models-section .header .icons img {
+    margin-left: 10px;
+    border-radius: 3px;
+}
+
+.shop-section .img-card {
+    width: 302px;
+    height: 531px;
+}
+
+.shop-section .img-card .img-container {
+    width: 100%;
+    height: 402px;
+}
+
+.shop-section .img-card .img-container img {
+    width: 100%;
+    height: 100%;
+}
+
+.shop-section .img-card .product-name {
+    font-size: 16px;
+    font-family: var(--fontFamily-volkhov);
+    color: #000;
+    margin-top: 20px;
+    line-height: 1;
+}
+
+.shop-section .img-card .product-price {
+    font-size: 16px;
+    font-family: var(--fontFamily-poppins);
+    color: #000;
+    margin-top: 8px;
+    line-height: 1;
+}
+
+.shop-section .img-card .color-list {
+    display: flex;
+    align-items: center;
+}
+
+.shop-section .img-card .color-wrapper {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    margin-top: 15px;
+    margin-right: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.shop-section .img-card .color-wrapper .color-item {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: cyan;
+    align-self: center;
+    justify-self: center;
+}
+
+
+.shop-section .img-card .color-wrapper.active{
+    border: 1px solid black;
+    padding: 4px;
+}
+
