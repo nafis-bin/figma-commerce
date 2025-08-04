@@ -590,7 +590,7 @@ body {
 }
 
 .peaky-blinder-section {
-    width: 100%;
+    width: 100vw;
     height: 570px;
     background-color: #f8f8f8;
     display: flex;
@@ -654,7 +654,7 @@ body {
 }
 
 .peaky-bar {
-    width: 100%;
+    width: 100vw;
     height: 200px;
     padding: 72px 320px;
     display: flex;
