@@ -1967,3 +1967,191 @@ footer p {
 .shop-section .tag-section .tag-names {
     margin-top: 16px;
 }
+
+
+.shop-section .single-product {
+    width: 100%;
+    height: 1040px;
+    margin-top: 88px;
+    /* background-color: blue; */
+    display: flex;
+}
+
+.shop-section .single-product .sidebar {
+    width: 90px;
+}
+
+.shop-section .single-product .sidebar-small {
+    width: 90px;
+}
+
+.shop-section .single-product .sidebar .sidebar-grid {
+    display: grid;
+    gap: 10px;
+}
+
+.shop-section .single-product .sidebar .img-container {
+    width: 70px;
+    height: 93px
+}
+
+.shop-section .single-product .sidebar .img-container img {
+    width: 100%;
+    height: 100%;
+}
+
+.shop-section .single-product .product-img-container {
+    width: 491px;
+    height: 655px;
+}
+
+
+.shop-section .single-product .product-img-container img {
+    width: 100%;
+    height: 100%;
+}
+
+.shop-section .single-product .product-details {
+    margin-left: 65px;
+    flex: 1;
+    background-color: #fff;
+    /* background-color: red; */
+}
+
+.shop-section .single-product .product-details .prod-title {
+    color: #666;
+    font-family: var(--fontFamily-volkhov);
+    font-size: 14px;
+}
+
+.shop-section .single-product .product-details .prod-description {
+    color: #000;
+    font-family: var(--fontFamily-volkhov);
+    font-size: 30px;
+    line-height: 42px;
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.shop-section .single-product .product-details .prod-description .img-container {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    /* border: 1px solid black; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+.shop-section .single-product .product-details .prod-description .img-container img {
+    width: 20px;
+    height: 20px;
+}
+
+.shop-section .single-product .ratings-wrapper {
+    display: flex;
+    gap: 8px;
+}
+
+.shop-section .single-product .ratings {
+    display: flex;
+    padding-block: 3.75px;
+}
+
+.shop-section .single-product .ratings .img-container {
+    width: 15px;
+    height: 15px;
+}
+
+.shop-section .single-product .ratings .img-container img {
+    width: 100%;
+    height: 100%;
+}
+
+
+.shop-section .single-product .ratings-wrapper p {
+    font-size: 15px;;
+}
+
+.shop-section .single-product .price-section {
+    display: flex;
+    gap: 8px;
+    margin-top: 19px;
+    align-items: center;
+}
+
+.shop-section .single-product .price-section .curr {
+    font-size: 24px;
+    line-height: 32px;
+    font-family: var(--fontFamily-volkhov);
+}
+
+.shop-section .single-product .price-section .prev {
+    font-size: 16px;
+    line-height: 19.2px;
+    color: #666;
+}
+
+.shop-section .single-product .price-section .discount {
+    color: #fff;
+    font-weight: 500;
+    font-size: 11px;
+    background-color: #da3f3f;
+    border-radius: 11px;
+    padding: 3px 10px;
+}
+
+.shop-section .single-product .views-section {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.shop-section .single-product .views-section img {
+    font-size: 20px;
+}
+
+.shop-section .single-product .views-section .text {
+    font-size: 16px;
+    line-height: 24px;
+    color: #8a8a8a;
+}
+
+.shop-section .single-product .sale-banner {
+    display: flex;
+    align-items: center;
+    gap: 121px;
+    width: 595px;
+    height: 54px;
+    align-items: center;
+    background-color: #fdefee;
+    margin-top: 30px;
+    border-radius: 4px;
+    padding-inline-start: 15px;
+}
+
+.shop-section .single-product .sale-banner .sale-txt {
+    font-family: var(--fontFamily-volkhov);
+    font-size: 18px;
+    line-height: 28px;
+    color: #ff706b;
+}
+
+.shop-section .single-product .sale-banner .time {
+    display: flex;
+    align-items: center;
+}
+
+.shop-section .single-product .sale-banner .time .part {
+    font-weight: 600;
+    padding-inline: 10px;
+    line-height: 32px;
+    font-size: 20px;
+    color: #ff706b;
+}
