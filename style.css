@@ -2155,3 +2155,223 @@ footer p {
     font-size: 20px;
     color: #ff706b;
 }
+
+.shop-section .single-product .stock-left {
+    margin-top: 29px;
+}
+
+.shop-section .single-product .stock-left .stock-left-txt {
+    font-size: 16px;
+    line-height: 24px;
+    color: #666;
+}
+
+.shop-section .single-product .stock-left .stock-left-txt span {
+    display: inline;
+    font-weight: 600;
+}
+
+.shop-section .single-product .progress-bar-container {
+    width: 94%;
+    height: 5px;
+    background-color: #dedede;
+    border-radius: 2px;
+    margin-top: 12px;
+}
+
+.shop-section .single-product .progress-bar-container .progress-bar {
+    width: 15%;
+    height: 100%;
+    background-color: #ef2d2d;
+    transition: width 0.3s ease;
+}
+
+.shop-section .single-product .size-section {
+    margin-top: 29px;
+}
+
+.shop-section .single-product .color-section .color-title,
+.shop-section .single-product .size-section .size-title {
+    font-size: 16px;
+    line-height: 24px;
+    font-family: var(--fontFamily-volkhov);
+    font-weight: 500;
+}
+
+.shop-section .single-product .size-section .size-box-container {
+   margin-top: 12px; 
+   display: flex;
+   gap: 10px;
+}
+
+.shop-section .single-product .size-section .size-box {
+    width: 45px;
+    height: 45px;
+    border-radius: 5px;
+    border: 1px solid #eee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    line-height: 27px;
+}
+
+.shop-section .single-product .size-section .size-box:first-child {
+    background-color: #000;
+    color: #fff;
+}
+
+.shop-section .single-product .color-section {
+    margin-top: 14px;
+}
+
+.shop-section .single-product .color-box-part {
+    margin-top: 12px;
+    display: flex;
+    gap: 10px;
+}
+
+.shop-section .single-product .color-box-container {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.shop-section .single-product .color-box {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.shop-section .single-product .color-box-container:first-child {
+    background-color: #fff;
+    padding: 4px;
+    border: 1px solid #000;
+}
+
+.shop-section .single-product .quantity-section {
+    margin-top: 29px;
+}
+
+.shop-section .single-product .quantity-section .quantity-title {
+    font-size: 16px;
+    line-height: 24px;
+    font-family: var(--fontFamily-volkhov);
+}
+
+.shop-section .single-product .quantity-section .add-cart-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 13px;
+}
+
+.shop-section .quantity-section .amount-container {
+    width: 128px;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border: 1px solid #eee;
+}
+
+.shop-section .quantity-section .add-cart-btn {
+    width: 442px;
+    height: 45px;
+    font-family: var(--fontFamily-volkhov);
+    font-size: 16px;
+    line-height: 23px;
+    padding: auto;
+    border-radius: 5px;
+    border: 1px solid #000;
+}
+
+.shop-section .single-product .good-links {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-top: 70px;
+}
+
+.shop-section .single-product .good-links .link-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.shop-section .single-product .good-links .link-container img {
+    width: 20px;
+    height: 20px;
+}
+
+.shop-section .single-product .good-links .link-container .txt {
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.shop-section .single-product .delivery-info {
+    display: grid;
+    gap: 8px;
+    margin-top: 24.5px;
+}
+
+
+.shop-section .single-product .delivery-info .delivery-container {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.shop-section .single-product .delivery-info .img-container {
+    width: 20px;
+    height: 20px;
+    align-self: center;
+}
+
+.shop-section .single-product .delivery-info img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.shop-section .single-product .delivery-info .marker {
+    font-family: var(--fontFamily-volkhov);
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.shop-section .single-product .delivery-info .date {
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.shop-section .single-product .sponsors-section {
+    width: 100%;
+    height: 109px;
+    border-radius: 5px;
+    margin-top: 30px;
+    background-color: #f8f8f8;
+    display: flex;
+    flex-direction: column;
+    gap: 21px;
+    justify-content: center;
+    align-items: center;
+}
+
+.shop-section .single-product .sponsors-section .img-container {
+    width: 320px;
+    height: 25.23px;
+}
+
+.shop-section .single-product .sponsors-section .img-container img {
+    width: 100%;
+    height: 100%;
+}
+
+
+.shop-section .single-product .sponsors-section .txt {
+    font-family: var(--fontFamily-volkhov);
+    font-size: 16px;
+}
