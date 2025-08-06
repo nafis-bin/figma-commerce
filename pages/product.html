@@ -209,6 +209,57 @@
             </div>
         </div>
     </div>
+
+    <div class="overlay"></div>
+
+    <div class="mini-cart-section">
+        <div class="title-wrapper">
+            <div class="mini-cart-title">Shopping Cart</div>
+            <img class="cross-btn" src="../images/Vector (3).png" alt="">
+        </div>
+        <div class="sub-txt">Buy <span>$122.35</span> more and get <span>free shipping</span></div>
+        <div class="product-info">
+            <div class="img-container">
+                <img src="../images/Product Image.png" alt="">
+            </div>
+            <div class="product-details">
+                <div class="prod-title">Denim Jacket</div>
+                <div class="color-title">Color: Red</div>
+                <div class="prod-price">$14.80</div>
+                <div class="amount-section">
+                    <div class="min">-</div>
+                    <div class="multi">01</div>
+                    <div class="pls">+</div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="sepa"></div>
+
+        <div class="checkbox-container">
+            <input type="checkbox" name="checkbox" class="checkbox" value="yes">
+            <p>For <span>$10.00</span> please wrap the product</p>
+        </div>
+
+        <div class="sepa"></div>
+
+        <div class="subtotal-container">
+            <div>Subtotal</div>
+            <div>$100.00</div>
+        </div>
+
+        <button class="checkout-btn">Checkout</button>
+        
+        <div class="view-btn">
+            <a href="../pages/error.html">
+                View Cart
+            </a>
+        </div>
+
+    </div>
+
     <div class="peaky-blinder-section">
         <div class="img-wrapper">
             <img class="img" src="../images/image (5).png" alt="women">
@@ -426,6 +477,22 @@
             const minusBtn = document.querySelector('.minus');
             minusBtn.addEventListener('click', removeShit);
 
+
+            // cross btn goes back to prev state
+            let miniCart = document.querySelector('.mini-cart-section');
+            let crossBtn = document.querySelector('.cross-btn');
+            let overlay = document.querySelector('.overlay');
+            let addCart = document.querySelector('.add-cart-btn');
+
+            addCart.onclick = () => {
+                miniCart.classList.toggle('active')
+                overlay.classList.toggle('active')
+            }
+
+            crossBtn.onclick = () => {
+                miniCart.classList.toggle('active')
+                overlay.classList.toggle('active')
+            }
         });
     </script>
 </body>
