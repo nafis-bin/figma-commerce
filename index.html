@@ -111,8 +111,8 @@
         </div>
 
         <div class="arrows">
-            <img src="./images/arrow (2).png" alt="left">
-            <img src="./images/arrow (1).png" alt="right">
+            <img src="./images/arrow (2).png" alt="left" class="arrow left-arrow">
+            <img src="./images/arrow (1).png" alt="right" class="arrow right-arrow">
         </div>
 
         <div class="img-box">
@@ -570,6 +570,41 @@
     shop.onclick = () => {
         window.location.href = './pages/shop.html'
     }
+
+    let radioBtns = document.querySelectorAll('.dot-wrapper');
+    
+    for (let i = 0; i < radioBtns.length; i++) {
+        radioBtns[i].onclick = () => {
+            document.querySelector('.dot-wrapper.active').classList.remove('active');
+            radioBtns[i].classList.toggle('active');
+        }
+    }
+
+    let arrows = document.querySelectorAll('.arrow');
+    arrows.forEach(arrow => {
+        arrow.onclick = () => {
+            // console.log('click happening')
+            let activeBtn = document.querySelector('.dot-wrapper.active');
+
+            if (arrow.classList.contains('left-arrow')) {
+                let prev = activeBtn.previousElementSibling;
+                if (prev && prev.classList.contains('dot-wrapper')) {
+                    activeBtn.classList.remove('active');
+                    prev.classList.toggle('active');
+                }
+                return;
+            }
+
+            let next = activeBtn.nextElementSibling;
+            if (next && next.classList.contains('dot-wrapper')) {
+                activeBtn.classList.remove('active');
+                next.classList.toggle('active');
+            }
+
+
+        }
+    })
+
 </script>
 </body>
 </html>
