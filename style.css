@@ -2281,7 +2281,9 @@ footer p {
 .shop-section .quantity-section .amount-container div {
     font-size: 16px;
     line-height: 24px;
+    cursor: pointer;
 }
+
 
 .shop-section .quantity-section .add-cart-btn {
     width: 442px;

@@ -160,9 +160,9 @@
                     <div class="quantity-title">Quantity</div>
                     <div class="add-cart-container">
                         <div class="amount-container">
-                            <div>-</div>
-                            <div>1</div>
-                            <div>+</div>
+                            <div class="minus">-</div>
+                            <div class="multiplier">1</div>
+                            <div class="plus">+</div>
                         </div>
                         <button class="add-cart-btn">Add to Cart</button>
                     </div>
@@ -378,22 +378,54 @@
 
         window.addEventListener('DOMContentLoaded', () => {
 
+            // dynamicaly loading the product from url
             const urlParams = new URLSearchParams(window.location.search);
             let name = decodeURIComponent(urlParams.get('name'));
             let url = decodeURIComponent(urlParams.get('url'));
             let price = urlParams.get('price');
-
             let titleElement = document.querySelector('.prod-description > p');
+            let imgElement = document.querySelector('.main-img');
+            let currPrice = document.querySelector('.price-section > .curr');
+            let multiplier = Number(document.querySelector('.multiplier').textContent);
+            let newPrice = Number(price.substring(1, price.length)) * multiplier;
+
+
+
             titleElement.textContent = name;
 
-            let imgElement = document.querySelector('.main-img');
-            console.log(imgElement.src);
-            console.log(url);
             imgElement.src = url;
 
-            let currPrice = document.querySelector('.price-section > .curr');
-            // console.log(currPrice.textContent);
             currPrice.textContent = price;
+
+            function updateMultiplier(newVal) {
+                document.querySelector('.multiplier').textContent = newVal;
+            }
+
+            function addShit() {
+                // console.log('calling addshit');
+                multiplier++;
+                updateMultiplier(multiplier);
+                // console.log(price);
+                newPrice = Number(price.substring(1, price.length)) * multiplier;
+                currPrice.textContent = `$${newPrice}.00`;
+            }
+
+            function removeShit() {
+                // console.log('removeshit');
+                if (multiplier > 1) {
+                    multiplier--;
+                    updateMultiplier(multiplier);
+                    newPrice = Number(price.substring(1, price.length)) * multiplier;
+                    currPrice.textContent = `$${newPrice}.00`;
+                }
+            }
+
+            const plusBtn = document.querySelector('.plus');
+            plusBtn.addEventListener('click', addShit);
+
+            const minusBtn = document.querySelector('.minus');
+            minusBtn.addEventListener('click', removeShit);
+
         });
     </script>
 </body>
