@@ -155,11 +155,11 @@
             </div>
             <div class="img-grid">
 
-                <div class="img-card">
+                <div class="img-card" data-img="../images/Link ⏵ responsive-image.png" data-name="Rounded Red Hat" data-price="$8.00">
                     <div class="img-container">
-                        <img src="../images/Link ⏵ responsive-image.png" alt="img">
+                        <img src="../images/Link ⏵ responsive-image.png" >
                     </div>
-                    <div class="product-name">Rounded Red Hat</div>
+                    <div class="product-name" >Rounded Red Hat</div>
                     <div class="product-price">$8.00</div>
                     <div class="color-list">
                         <div class="color-wrapper active">
@@ -170,9 +170,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="img-card">
+                <div class="img-card" data-img="../images/57.jpg.png" data-name="Linen Blend Shirt" data-price="$17.00">
                     <div class="img-container">
-                        <img src="../images/57.jpg.png" alt="img">
+                        <img src="../images/57.jpg.png">
                     </div>
                     <div class="product-name">Linen Blend Shirt</div>
                     <div class="product-price">$17.00</div>
@@ -185,9 +185,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="img-card">
+                <div class="img-card" data-img="../images/Link ⏵ responsive-image (1).png" data-name="Long-Sleeve Coat" data-price="$106.00">
                     <div class="img-container">
-                        <img src="../images/Link ⏵ responsive-image (1).png" alt="img">
+                        <img src="../images/Link ⏵ responsive-image (1).png">
                     </div>
                     <div class="product-name">Long-Sleeve Coat</div>
                     <div class="product-price">$106.00</div>
@@ -200,12 +200,12 @@
                         </div>
                     </div>
                 </div>
-                <div class="img-card">
+                <div class="img-card" data-img="../images/Link ⏵ responsive-image (2).png" data-name="Boxy Denim Hat" data-price="$25.00">
                     <div class="img-container">
-                        <img src="../images/Link ⏵ responsive-image (2).png" alt="img">
+                        <img src="../images/Link ⏵ responsive-image (2).png">
                     </div>
                     <div class="product-name">Boxy Denim Hat</div>
-                    <div class="product-price">$25.00</div>
+                    <div class="product-price" >$25.00</div>
                     <div class="color-list">
                         <div class="color-wrapper active">
                             <div class="color-item" style="background-color: #b1c5d4;"></div>
@@ -215,9 +215,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="img-card">
+                <div class="img-card" data-img="../images/Link ⏵ responsive-image (3).png" data-name="Linen-Plain Top" data-price="$25.00">
                     <div class="img-container">
-                        <img src="../images/Link ⏵ responsive-image (3).png" alt="img">
+                        <img src="../images/Link ⏵ responsive-image (3).png">
                     </div>
                     <div class="product-name">Linen-Plain Top</div>
                     <div class="product-price">$25.00</div>
@@ -230,9 +230,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="img-card">
+                <div class="img-card" data-img="../images/Link ⏵ responsive-image (4).png" data-name="Oversized T-shirt" data-price="$11.00">
                     <div class="img-container">
-                        <img src="../images/Link ⏵ responsive-image (4).png" alt="img">
+                        <img src="../images/Link ⏵ responsive-image (4).png">
                     </div>
                     <div class="product-name">Oversized T-shirt</div>
                     <div class="product-price">$11.00</div>
@@ -248,9 +248,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="img-card">
+                <div class="img-card" data-img="../images/Link ⏵ responsive-image (5).png" data-name="Polarized Sunglasses" data-price="$18.00">
                     <div class="img-container">
-                        <img src="../images/Link ⏵ responsive-image (5).png" alt="img">
+                        <img src="../images/Link ⏵ responsive-image (5).png" >
                     </div>
                     <div class="product-name">Polarized Sunglasses</div>
                     <div class="product-price">$18.00</div>
@@ -263,9 +263,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="img-card">
+                <div class="img-card" data-img="../images/Link ⏵ responsive-image (6).png" data-name="Rockstar Jacket" data-price="$22.00">
                     <div class="img-container">
-                        <img src="../images/Link ⏵ responsive-image (6).png" alt="img">
+                        <img src="../images/Link ⏵ responsive-image (6).png">
                     </div>
                     <div class="product-name">Rockstar Jacket</div>
                     <div class="product-price">$22.00</div>
@@ -278,9 +278,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="img-card">
+                <div class="img-card" data-img="../images/Link ⏵ responsive-image (7).png" data-name="Dotted Black Dress" data-price="$20.00">
                     <div class="img-container">
-                        <img src="../images/Link ⏵ responsive-image (7).png" alt="img">
+                        <img src="../images/Link ⏵ responsive-image (7).png" >
                     </div>
                     <div class="product-name">Dotted Black Dress</div>
                     <div class="product-price">$20.00</div>
@@ -434,5 +434,18 @@
     <footer>
         <p>Copyright © 2025 nafis-bin . All Rights Reseved.</p>
     </footer>
+    
+    <script>
+        let cards = document.querySelectorAll('.img-card');
+        cards.forEach(card => {
+            card.addEventListener('click', () => {
+                let name = encodeURIComponent(card.dataset.name);
+                let imgUrl = encodeURIComponent(card.dataset.img);
+                let price = encodeURIComponent(card.dataset.price);
+
+                window.location.href = `product.html?name=${name}&url=${imgUrl}&price=${price}`;
+            })
+        })
+    </script>
 </body>
 </html>

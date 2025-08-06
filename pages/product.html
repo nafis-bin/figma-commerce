@@ -70,14 +70,14 @@
                 </div>
             </div>
             <div class="product-img-container">
-                <img src="../images/div.swiper-container.png" alt="">
+                <img src="../images/div.swiper-container.png" alt="" class="main-img">
             </div>
             <div class="product-details">
                 <div class="prod-title">FASCO</div>
                 <div class="prod-description">
                     <p>Denim Jacket</p>
                     <div class="img-container">
-                        <img src="../images/SVG (4).png" alt="">
+                        <img src="../images/SVG (4).png" alt="" >
                     </div>
                 </div>
 
@@ -374,5 +374,27 @@
     <footer>
         <p>Copyright © 2025 nafis-bin . All Rights Reseved.</p>
     </footer>
+    <script>
+
+        window.addEventListener('DOMContentLoaded', () => {
+
+            const urlParams = new URLSearchParams(window.location.search);
+            let name = decodeURIComponent(urlParams.get('name'));
+            let url = decodeURIComponent(urlParams.get('url'));
+            let price = urlParams.get('price');
+
+            let titleElement = document.querySelector('.prod-description > p');
+            titleElement.textContent = name;
+
+            let imgElement = document.querySelector('.main-img');
+            console.log(imgElement.src);
+            console.log(url);
+            imgElement.src = url;
+
+            let currPrice = document.querySelector('.price-section > .curr');
+            // console.log(currPrice.textContent);
+            currPrice.textContent = price;
+        });
+    </script>
 </body>
 </html>
