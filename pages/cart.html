@@ -63,7 +63,7 @@
 
                 <div class="product">
                     <div class="img-container">
-                        <img src="../images/div.swiper-container.png" alt="">
+                        <img src="../images/div.swiper-container.png" alt="" class="img">
                     </div>
                     <div class="info">
                         <div class="prod-title">Mini dress with <br>ruffled straps</div>
@@ -98,15 +98,15 @@
 
             <div class="subtotal-container">
                 <div>Subtotal</div>
-                <div>$100.00</div>
+                <div class="subtotal-price">$100.00</div>
             </div>
 
             <button class="checkout-btn">Checkout</button>
             
             <div class="view-btn">
-                <a href="../pages/cart.html">
+                <!-- <a href="../pages/cart.html"> -->
                     View Cart
-                </a>
+                <!-- </a> -->
             </div>
         </div>
     </div>
@@ -143,5 +143,54 @@
     <footer>
         <p>Copyright © 2025 nafis-bin . All Rights Reseved.</p>
     </footer>
+
+    <script>
+        // loading from url
+        let urlParams = new URLSearchParams(window.location.search);
+
+        let name = decodeURIComponent(urlParams.get('name'));
+        let url = decodeURIComponent(urlParams.get('url'));
+        let price = decodeURIComponent(urlParams.get('price'));
+        let multi = decodeURIComponent(urlParams.get('multi'));
+        let total = decodeURIComponent(urlParams.get('total'));
+        let checked = urlParams.get('checked');
+
+        
+        // selecting all elements required
+        let title = document.querySelector('.prod-title');
+        let img = document.querySelector('.img');
+        let nn = document.querySelector('.nn');
+        let productPrice = document.querySelector('.product-price');
+        let totalPrice = document.querySelector('.total-price');
+        let subPrice = document.querySelector('.subtotal-price');
+        let checkBox = document.querySelector('.checkbox');
+
+        // console.log(`name: ${name}`);
+        // console.log(`titleEle: ${title}`);
+
+        title.textContent = name;
+        img.src = url;
+        nn.textContent = multi;
+        productPrice.textContent = price;
+        totalPrice.textContent = total;
+        subPrice.textContent = total;
+
+        if (checked === 'yes') {
+            checkBox.checked = true;
+            totalPrice.textContent = `$${Number(totalPrice.textContent.substring(1, totalPrice.length)) - 10}.00`;
+        }
+
+
+        checkBox.addEventListener('change', () => {
+            // console.log('clicking on checkbox')
+            console.log(`checkbox val: ${checkBox.value}`)
+            if (checkBox.checked) {
+                subPrice.textContent = `$${Number(subPrice.textContent.substring(1, subPrice.length)) + 10}.00`;
+            } else {
+                subPrice.textContent = `$${Number(subPrice.textContent.substring(1, subPrice.length)) - 10}.00`;
+            }
+        })
+
+    </script>
 </body>
 </html>

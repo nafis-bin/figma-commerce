@@ -253,9 +253,9 @@
         <button class="checkout-btn">Checkout</button>
         
         <div class="view-btn">
-            <a href="../pages/cart.html">
+            <!-- <a href="../pages/cart.html"> -->
                 View Cart
-            </a>
+            <!-- </a> -->
         </div>
 
     </div>
@@ -460,12 +460,12 @@
             cartPrice.textContent = price;
             total.textContent = price;
 
-            if (checkBox.value === 'yes') {
+            if (checkBox.checked) {
                 total.textContent = `$${Number(total.textContent.substring(1, total.length)) + 10}.00`;
             }
 
             checkBox.addEventListener('change', () => {
-                if (checkBox.value === 'yes') {
+                if (checkBox.checked) {
                     total.textContent = `$${Number(total.textContent.substring(1, total.length)) + 10}.00`;
                 }
             })
@@ -521,6 +521,19 @@
             crossBtn.onclick = () => {
                 miniCart.classList.toggle('active')
                 overlay.classList.toggle('active')
+            }
+
+
+            // view btn leads to cart page
+            const viewBtn = document.querySelector('.view-btn');
+            viewBtn.onclick = () => {
+                name = encodeURIComponent(name);
+                url = encodeURIComponent(url);
+                price = encodeURIComponent(price);
+                multi = encodeURIComponent(cartMulti.textContent);
+                total = encodeURIComponent(total.textContent);
+
+                window.location.href = `../pages/cart.html?name=${name}&url=${url}&price=${price}&multi=${multi}&total=${total}&checked=${checkBox.value}`;
             }
         });
     </script>

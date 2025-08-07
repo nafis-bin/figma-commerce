@@ -2556,6 +2556,7 @@ footer p {
     font-family: var(--fontFamily-volkhov);
     /* background-color: red; */
     text-align: center;
+    cursor: pointer;
 }
 
 /* cart page */
@@ -2717,4 +2718,5 @@ footer p {
     font-family: var(--fontFamily-volkhov);
     /* background-color: red; */
     text-align: center;
+    cursor: pointer;
 }
