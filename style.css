@@ -2720,3 +2720,114 @@ footer p {
     text-align: center;
     cursor: pointer;
 }
+
+.shop-section .checkout-section .checkout-main {
+    margin-top: 44px;
+    display: flex;
+}
+
+
+.checkout-section .user-dets {
+    width: 607px;
+    margin-top: 81px;
+    display: grid;
+    gap: 60px;
+    background-color: #f1f1f1;
+}
+
+.checkout-section .user-dets .contact-section .marker-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 26px;
+}
+
+.checkout-section .user-dets .contact-section .marker {
+    font-family: var(--fontFamily-volkhov);
+    font-size: 46px;
+    color: #484848;
+}
+
+.checkout-section .user-dets .contact-section .link {
+    font-size: 16px;
+    color: #484848;
+}
+
+
+.checkout-section .user-dets .contact-section .marker-container a {
+    display: inline-block;
+    color: #1456ff;
+}
+
+.checkout-section .user-dets .input-bar {
+    width: 100%;
+    height: 71px;
+    padding-block: 23px;
+    padding-left: 28px;
+    font-size: 16px;
+    color: #8a8a8a;
+    background-color: #fff;
+    border: 1px solid #8a8a8a;
+    margin-top: 12px;
+}
+
+.checkout-section .user-dets .select-wrapper {
+    position: relative;
+}
+
+
+.checkout-section .user-dets .select-wrapper select {
+    width: 100%;
+    appearance: none;
+    cursor: pointer;
+    width: 100%;
+    height: 71px;
+    padding-block: 23px;
+    padding-left: 28px;
+    font-size: 16px;
+    color: #8a8a8a;
+    background-color: #fff;
+    border: 1px solid #8a8a8a;
+}
+.checkout-section .user-dets .select-wrapper::after {
+  content: "▾";
+  position: absolute;
+  right: 12px;
+  font-size: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.checkout-section .user-dets .input-line {
+    display: flex;
+    gap: 12px;
+}
+
+.checkout-section .user-dets .checkbox-container {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    margin-top: 16px;
+}
+
+.checkout-section .user-dets .checkbox-container .checkbox {
+    width: 22px;
+    height: 22px;
+}
+
+.checkout-section .user-dets .checkbox-container p {
+    font-size: 16px;
+    line-height: 42px;
+    color: #8a8a8a;
+}
+
+.checkout-section .user-dets .pay-btn {
+    width: 100%;
+    height: 66px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #000;
+    border-radius: 10px;
+}
