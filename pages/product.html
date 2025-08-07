@@ -220,7 +220,7 @@
         <div class="sub-txt">Buy <span>$122.35</span> more and get <span>free shipping</span></div>
         <div class="product-info">
             <div class="img-container">
-                <img src="../images/Product Image.png" alt="">
+                <img class="cart-img" src="../images/Product Image.png" alt="">
             </div>
             <div class="product-details">
                 <div class="prod-title">Denim Jacket</div>
@@ -247,7 +247,7 @@
 
         <div class="subtotal-container">
             <div>Subtotal</div>
-            <div>$100.00</div>
+            <div class="total">$100.00</div>
         </div>
 
         <button class="checkout-btn">Checkout</button>
@@ -440,16 +440,41 @@
             let multiplier = Number(document.querySelector('.multiplier').textContent);
             let newPrice = Number(price.substring(1, price.length)) * multiplier;
 
+            // mini cart shit
+            let cartTitle = document.querySelector('.mini-cart-section .prod-title');
+            let cartPrice = document.querySelector('.mini-cart-section .prod-price');
+            let cartMulti = document.querySelector('.mini-cart-section .multi');
+            let cartImg = document.querySelector('.mini-cart-section .cart-img');
+            let total = document.querySelector('.mini-cart-section .total');
+            let checkBox = document.querySelector('.mini-cart-section .checkbox');
 
 
+
+            cartTitle.textContent = name;
             titleElement.textContent = name;
 
             imgElement.src = url;
+            cartImg.src = url;
 
             currPrice.textContent = price;
+            cartPrice.textContent = price;
+            total.textContent = price;
+
+            if (checkBox.value === 'yes') {
+                total.textContent = `$${Number(total.textContent.substring(1, total.length)) + 10}.00`;
+            }
+
+            checkBox.addEventListener('change', () => {
+                if (checkBox.value === 'yes') {
+                    total.textContent = `$${Number(total.textContent.substring(1, total.length)) + 10}.00`;
+                }
+            })
 
             function updateMultiplier(newVal) {
                 document.querySelector('.multiplier').textContent = newVal;
+                if (newVal < 10) {
+                    cartMulti.textContent = `0` + newVal;
+                }
             }
 
             function addShit() {
@@ -459,6 +484,8 @@
                 // console.log(price);
                 newPrice = Number(price.substring(1, price.length)) * multiplier;
                 currPrice.textContent = `$${newPrice}.00`;
+                cartPrice.textContent = `$${newPrice}.00`;
+                total.textContent = `$${newPrice}.00`;
             }
 
             function removeShit() {
@@ -468,6 +495,8 @@
                     updateMultiplier(multiplier);
                     newPrice = Number(price.substring(1, price.length)) * multiplier;
                     currPrice.textContent = `$${newPrice}.00`;
+                    cartPrice.textContent = `$${newPrice}.00`;
+                    total.textContent = `$${newPrice}.00`;
                 }
             }
 
