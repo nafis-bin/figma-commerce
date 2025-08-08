@@ -447,8 +447,19 @@
             let cartImg = document.querySelector('.mini-cart-section .cart-img');
             let total = document.querySelector('.mini-cart-section .total');
             let checkBox = document.querySelector('.mini-cart-section .checkbox');
+            let checkoutBtn = document.querySelector('.checkout-btn');
 
 
+            checkoutBtn.onclick = () => {
+                const cartData = {
+                    name: encodeURIComponent(name),
+                    url: encodeURIComponent(url),
+                    subTotal: encodeURIComponent(cartPrice.textContent),
+                }
+                window.localStorage.setItem('cart', JSON.stringify(cartData));
+
+                window.location.href = '../pages/checkout.html';
+            }
 
             cartTitle.textContent = name;
             titleElement.textContent = name;
