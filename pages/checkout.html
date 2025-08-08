@@ -42,7 +42,7 @@
                 </ul>
             </nav>
         </header>
-        <div class="title">Checkout Now</div>
+        <div class="title">Checkout</div>
 
         <div class="checkout-section">
             <div class="checkout-main">
@@ -122,10 +122,98 @@
                 </div>
 
 
+                <div class="product-dets">
+                    <div class="product">
+                        <div class="img-container">
+                            <img class="img-url" src="../images/Rectangle 19265.png" alt="">
+                        </div>
+                        <div class="info">
+                            <div class="prod-title">Mini dress with ruffled straps</div>
+                            <div class="color-title">Red</div>
+                        </div>
 
-                <div class="product-dets"></div>
+                        <div class="prod-price">$100</div>
+                    </div>
+                    <div class="discount-section">
+                        <input type="text" class="discount-input" placeholder="Discount code">
+                        <button class="discount-btn">Apply</button>
+                    </div>
+
+                    <div class="pricing-section">
+                        <div class="pricing-container">
+                            <div class="marker">Subtotal</div>
+                            <div class="value subtotal">$100.00</div>
+                        </div>
+                        <div class="pricing-container">
+                            <div class="marker">Shipping</div>
+                            <div class="value">$40.00</div>
+                        </div>
+                        <div class="pricing-container">
+                            <div class="marker">Total</div>
+                            <div class="value total">$140.00</div>
+                        </div>
+                    </div>
+                    
+                </div>
             </div>
         </div>
     </div>
+    <div class="ending-section">
+
+        <div class="img-container">
+            <img src="../images/image 2.png" alt="">
+        </div>
+
+        <div class="news-letter">
+            <p class="title">Subscribe To Our Newsletter</p>
+            <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Scelerisque duis ultrices sollicitudin aliquam sem. Scelerisque duis ultrices sollicitudin </p>
+            <input type="text" placeholder="micheal@ymail.com">
+            <button class="btn">Subscribe Now</button>
+        </div>
+
+        <div class="img-container">
+            <img src="../images/image 3.png" alt="">
+        </div>
+    </div>
+    <aside>
+        <p class="logo">FASCO</p>
+        <ul class="links">
+            <li class="link-item">Support Center</li>
+            <li class="link-item">invoicing</li>
+            <li class="link-item">Contract</li>
+            <li class="link-item">Careers</li>
+            <li class="link-item">Blogs</li>
+            <li class="link-item">FAQs</li>
+        </ul>
+    </aside>
+    <footer>
+        <p>Copyright © 2025 nafis-bin . All Rights Reseved.</p>
+    </footer>
+
+    <script>
+        // console.table(window.localStorage.getItem('cart'))
+        const { name, url, subTotal } = JSON.parse(window.localStorage.getItem('cart'));
+        // console.table({
+        //     name,
+        //     url,
+        //     subTotal
+        // })
+
+        const prodTitle = document.querySelector('.prod-title');
+        const prodPrice = document.querySelector('.prod-price');
+        const img = document.querySelector('.img-url');
+        const subTotalValue = document.querySelector('.value.subtotal');
+        const totalEle = document.querySelector('.value.total');
+        
+        prodTitle.textContent = decodeURIComponent(name);
+        img.src = decodeURIComponent(url);
+
+        subTotalValue.textContent = decodeURIComponent(subTotal);
+        prodPrice.textContent = decodeURIComponent(subTotal);
+
+        let totalVal = parseInt(subTotalValue.textContent.substring(1, subTotalValue.textContent.length)) + 40;
+        totalEle.textContent = `$${totalVal}.00`;
+
+    </script>
 </body>
 </html>

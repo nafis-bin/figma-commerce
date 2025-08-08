@@ -164,6 +164,18 @@
         let totalPrice = document.querySelector('.total-price');
         let subPrice = document.querySelector('.subtotal-price');
         let checkBox = document.querySelector('.checkbox');
+        let checkoutBtn = document.querySelector('.checkout-btn');
+
+        checkoutBtn.onclick = () => {
+            const cartData = {
+                name: encodeURIComponent(name),
+                url: encodeURIComponent(url),
+                subTotal: encodeURIComponent(subPrice.textContent),
+            }
+            window.localStorage.setItem('cart', JSON.stringify(cartData));
+
+            window.location.href = '../pages/checkout.html';
+        }
 
         // console.log(`name: ${name}`);
         // console.log(`titleEle: ${title}`);
@@ -179,6 +191,8 @@
             checkBox.checked = true;
             totalPrice.textContent = `$${Number(totalPrice.textContent.substring(1, totalPrice.length)) - 10}.00`;
         }
+
+
 
 
         checkBox.addEventListener('change', () => {
