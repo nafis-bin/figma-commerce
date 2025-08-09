@@ -629,6 +629,7 @@ body {
 .peaky-blinder-section {
     width: 1920px;
     height: 570px;
+    margin-inline: auto;
     background-color: #f8f8f8;
     display: flex;
     position: relative;
@@ -699,6 +700,7 @@ body {
 .peaky-bar {
     width: 1920px;
     height: 200px;
+    margin-inline: auto;
     padding: 72px 320px;
     display: flex;
     align-items: center;
