@@ -1750,6 +1750,7 @@ footer p {
     margin-top: 78px;
     font-family: var(--fontFamily-volkhov);
     font-size: 42px;
+    line-height: 32px;
 }
 
 .shop-section .location {
@@ -1772,7 +1773,7 @@ footer p {
 }
 
 .shop-section .main-section {
-    margin-top: 97px;
+    margin-top: 103px;
     display: grid;
     grid-template-columns: 322px 958px;
 }
@@ -1797,6 +1798,7 @@ footer p {
 
 .shop-section .models-section .header .catagory {
     font-size: 16px;
+    line-height: 24px;
     font-family: var(--fontFamily-volkhov);
 }
 
@@ -1809,6 +1811,8 @@ footer p {
 .shop-section .models-section .header .icons img {
     margin-left: 10px;
     border-radius: 3px;
+    width: 34px;
+    height: 34px;
 }
 
 .shop-section .models-section .img-grid {
@@ -1826,6 +1830,7 @@ footer p {
 .shop-section .img-card .img-container {
     width: 100%;
     height: 402px;
+    cursor: pointer;
 }
 
 .shop-section .img-card .img-container img {
