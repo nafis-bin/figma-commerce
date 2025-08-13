@@ -35,8 +35,8 @@
                     <a href="./pages/login.html" class="navitem-link profile">
                         <div class="navitem">Sign in</div>
                     </a>
-                    <a href="#" class="navitem-link logout">
-                        <button class="navitem sign-up">Sign up</button>
+                    <a href="#" class="navitem-link">
+                        <button class="navitem sign-up logout">Sign up</button>
                     </a>
                 </div>
             </nav>
@@ -560,14 +560,26 @@
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
 <script>
-    const user = window.localStorage.getItem('user');
+    const user = JSON.parse(window.localStorage.getItem('user'));
     if (user) {
         document.querySelector('.profile').remove();
         let out = document.querySelector('.logout');
         out.innerHTML = 'Logout';
         out.onclick = () => {
-            window.localStorage.clear();
+            window.localStorage.setItem('user', null);
             window.location.href = './index.html';
+        }
+    }
+
+    let signup = document.querySelector('.sign-up');
+    signup.onclick = () => {
+        if (signup.textContent === 'Logout') {
+            
+            window.localStorage.setItem('user', null);
+            window.location.href = './index.html';
+
+        } else {
+            window.location.href = './pages/signup.html';
         }
     }
 

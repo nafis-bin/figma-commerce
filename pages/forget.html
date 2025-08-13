@@ -24,7 +24,7 @@
                 <h3>Forget Password</h3>
                 <div class="input-line">
                     <input type="text" placeholder="First Name">
-                    <input type="text" placeholder="Email Address"> 
+                    <input type="text" placeholder="Email Address" class="mail"> 
                 </div>
                 <div class="input-line">
                     <input type="text" placeholder="Last Name">
@@ -36,9 +36,17 @@
         </div>
     </div>
     <script>
+        const mail = document.querySelector('.mail').value;
         const confirm_btn = document.querySelector('.code-btn');
+        const user = JSON.parse(window.localStorage.getItem('user'));
+
         confirm_btn.addEventListener('click', () => {
-            window.location.href = '/pages/confirm.html';
+            
+            if (user.mail === mail) {
+                window.location.href = '/pages/confirm.html';
+            } else {
+                window.location.href = '../pages/error.html';
+            }
         })
     </script>
 </body>

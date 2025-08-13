@@ -14,14 +14,14 @@
 </head>
 <body>
     <div class="login-section">
-        <div class="login-boxes">
+        <div class="login-boxes signup-boxes">
             <div class="img-container">
                 <img src="../images/0eb7f5f9-eeb2-4c13-91fb-27231c2872d3.jpg" alt="women">
             </div>
             <div class="login-area">
                 <div class="header">FASCO</div>
                 <div class="input-container">
-                    <p>Sign In To FASCO</p>
+                    <p>Create Account</p>
                     <div class="buttons">
                         <button class="btn">
                             <div class="img-container">
@@ -41,40 +41,54 @@
                         <div class="or-text">OR</div>
                         <div class="sep"></div>
                     </div>
-                    <input type="text" class="input-box mail" placeholder="Email">
-                    <input type="text" class="input-box password" placeholder="Password">
-                    <button class="login-btn sign-in">Sign In</button>
-                    <button class="login-btn register">Register Now</button>
-                    <a href="./forget.html" class="forget">forget password?</a>
+
+                    <div class="input-container inside">
+                        <div class="input-group">
+                            <input type="text" placeholder="First Name" class="input-seg">
+                            <input type="text" placeholder="Last Name" class="input-seg">
+                        </div>
+
+                        <div class="input-group">
+                            <input type="text" placeholder="Email Address" class="input-seg mail">
+                            <input type="text" placeholder="Phone Number" class="input-seg">
+                        </div>
+
+                        <div class="input-group">
+                            <input type="text" placeholder="Password" class="input-seg password">
+                            <input type="text" placeholder="Confirm Password" class="input-seg confirm">
+                        </div>
+
+                    </div>
+
+
+                    <button class="create btn">Create Account</button>
+                    <div class="already">Already have an account? <a href="../pages/login.html">Login</a></div>
                 </div>
             </div>
         </div>
     </div>
     <script>
-        document.querySelector('.login-btn.sign-in').onclick = () => {
+        document.querySelector('.create.btn').onclick = () => {
 
             const mail = document.querySelector('.mail').value;
             const password = document.querySelector('.password').value;
+            const confirm = document.querySelector('.confirm').value;
+            const users = JSON.parse(window.localStorage.getItem('users')) || [];
 
-            console.table({
-                mail,
-                password
-            });
-
-            const users = JSON.parse(window.localStorage.getItem('users'));
-            console.table(users);
-
-            let user = users.find(u => u.mail === mail);
-            if (!user || (mail !== user.mail || password !== user.password)) {
-                window.location.href = '../pages/error.html';
-            } else {
+            if (mail !== '' && password === confirm) {
                 window.localStorage.setItem('user', JSON.stringify({
                     mail,
                     password
-                }));
+                }))
+
+                let updatedUsers = [...users, { mail, password }];
+                window.localStorage.setItem('users', JSON.stringify(updatedUsers));
 
                 window.location.href = '../index.html';
+            } else {
+                window.location.href = '../pages/error.html';
             }
+
         }
 
 
