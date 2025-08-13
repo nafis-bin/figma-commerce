@@ -1956,29 +1956,19 @@ footer p {
     align-items: center;
 }
 
-.shop-section .img-card .color-wrapper {
+
+.shop-section .img-card .color-item {
     width: 26px;
     height: 26px;
     border-radius: 50%;
-    margin-top: 15px;
-    margin-right: 7px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.shop-section .img-card .color-wrapper .color-item {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    align-self: center;
-    justify-self: center;
+    margin-top: 18px;
+    margin-right: 10px;
 }
 
 
-.shop-section .img-card .color-wrapper.active{
-    border: 1px solid black;
-    padding: 4px;
+.shop-section .img-card .color-item.active{
+    box-shadow: inset 0px 0px 0px 4px #ffffff,
+                0px 0px 0px 1px #000;
 }
 
 
@@ -2762,6 +2752,9 @@ footer p {
 
 .shop-section .product-layers {
     margin-top: 35px;
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
 }
 
 .shop-section .product-layer {
@@ -2806,6 +2799,7 @@ footer p {
     line-height: 42px;
     font-size: 22px;
     color: #8a8a8a;
+    cursor: pointer;
 }
 
 .shop-section .product-layer .total-price,

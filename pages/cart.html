@@ -59,7 +59,7 @@
         <div class="sep-line"></div>
 
         <div class="product-layers">
-            <div class="product-layer">
+            <!-- <div class="product-layer">
 
                 <div class="product">
                     <div class="img-container">
@@ -82,7 +82,7 @@
 
 
                 <div class="total-price">$14.90</div>
-            </div>
+            </div> -->
         </div>
         
         <div class="sep-line"></div>
@@ -145,26 +145,132 @@
     </footer>
 
     <script>
-        // loading from url
-        let urlParams = new URLSearchParams(window.location.search);
 
-        let name = decodeURIComponent(urlParams.get('name'));
-        let url = decodeURIComponent(urlParams.get('url'));
-        let price = decodeURIComponent(urlParams.get('price'));
-        let multi = decodeURIComponent(urlParams.get('multi'));
-        let total = decodeURIComponent(urlParams.get('total'));
-        let checked = urlParams.get('checked');
-
-        
         // selecting all elements required
-        let title = document.querySelector('.prod-title');
-        let img = document.querySelector('.img');
-        let nn = document.querySelector('.nn');
-        let productPrice = document.querySelector('.product-price');
-        let totalPrice = document.querySelector('.total-price');
         let subPrice = document.querySelector('.subtotal-price');
         let checkBox = document.querySelector('.checkbox');
         let checkoutBtn = document.querySelector('.checkout-btn');
+
+        // pushing all products in cart
+        let layers = document.querySelector('.product-layers');
+        let cartProducts = JSON.parse(window.localStorage.getItem('cart')) || [];
+
+        let sup = 0;
+
+        cartProducts.forEach(c => {
+            var layer = document.createElement('div');
+            layer.classList.add('product-layer');
+
+            var product = document.createElement('div');
+            product.classList.add('product');
+
+            var imgContainer = document.createElement('div');
+            imgContainer.classList.add('img-container');
+
+            var img = document.createElement('img');
+            img.classList.add('img');
+            img.src = c.url;
+
+
+            var info = document.createElement('div');
+            info.classList.add('info');
+
+            var prodTitle = document.createElement('div');
+            prodTitle.classList.add('prod-title');
+            prodTitle.textContent = c.name;
+
+            var colorTitle = document.createElement('div');
+            colorTitle.classList.add('color-title');
+            colorTitle.textContent = 'Red';
+
+            var remove = document.createElement('div');
+            remove.classList.add('remove');
+            remove.textContent = 'Remove';
+
+            var prodPrice = document.createElement('div');
+            prodPrice.classList.add('product-price');
+            prodPrice.textContent = `${c.price}`;
+
+            
+            var quantContainer = document.createElement('div');
+            quantContainer.classList.add('quantity-container');
+
+            var min = document.createElement('div');
+            min.classList.add('min');
+            min.textContent = '-';
+
+            var nn = document.createElement('div');
+            nn.classList.add('nn');
+            nn.textContent = c.multi;
+
+            var pls = document.createElement('div');
+            pls.classList.add('pls');
+            pls.textContent = '+';
+
+
+            var totalPrice = document.createElement('div');
+            totalPrice.classList.add('total-price');
+            totalPrice.textContent = `${c.total}`;
+
+            // summing up the prices
+            sup += parseInt(c.total.substring(1, c.total.length));
+
+
+            imgContainer.append(img);
+
+            info.append(
+                prodTitle,
+                colorTitle,
+                remove
+            );
+
+            product.append(
+                imgContainer,
+                info,
+            );
+
+            quantContainer.append(
+                min,
+                nn,
+                pls,
+            )
+
+            layer.append(
+                product,
+                prodPrice,
+                quantContainer,
+                totalPrice,
+            )
+
+            layers.append(layer);
+
+            // layers.append(
+            //     layer,
+            //     layer.append(
+            //         product,
+            //         product.append(
+            //             imgContainer,
+            //             info,
+            //             imgContainer.append(img),
+            //             info.append(
+            //                 prodTitle,
+            //                 colorTitle,
+            //                 remove
+            //             )
+            //         ),
+            //         prodPrice,
+            //         quantContainer,
+            //         quantContainer.append(
+            //             min,
+            //             nn,
+            //             pls,
+            //         ),
+            //         totalPrice
+                    
+            //     )
+            // )
+        })
+
 
         checkoutBtn.onclick = () => {
             const cartData = {
@@ -177,31 +283,46 @@
             window.location.href = '../pages/checkout.html';
         }
 
-        // console.log(`name: ${name}`);
-        // console.log(`titleEle: ${title}`);
 
-        title.textContent = name;
-        img.src = url;
-        nn.textContent = multi;
-        productPrice.textContent = price;
-        totalPrice.textContent = total;
-        subPrice.textContent = total;
-
+        let checked = window.localStorage.getItem('checked');
         if (checked === 'yes') {
             checkBox.checked = true;
-            totalPrice.textContent = `$${Number(totalPrice.textContent.substring(1, totalPrice.length)) - 10}.00`;
-        }
+            sup += 10;
+        } 
 
-
+        subPrice.textContent = `$${sup}.00`;
 
 
         checkBox.addEventListener('change', () => {
             // console.log('clicking on checkbox')
             console.log(`checkbox val: ${checkBox.value}`)
             if (checkBox.checked) {
-                subPrice.textContent = `$${Number(subPrice.textContent.substring(1, subPrice.length)) + 10}.00`;
+                sup += 10;
+                subPrice.textContent = `$${sup}.00`;
             } else {
-                subPrice.textContent = `$${Number(subPrice.textContent.substring(1, subPrice.length)) - 10}.00`;
+                sup -= 10;
+                subPrice.textContent = `$${sup}.00`;
+            }
+        })
+
+        const removers = document.querySelectorAll('.remove');
+        removers.forEach(r => {
+            r.onclick = () => {
+                // selecting parent layer
+                var layers = r.closest('.product-layers');
+                var layer = r.closest('.product-layer');
+
+                var title = layer.querySelector('.prod-title').textContent;
+                var prodPrice = layer.querySelector('.total-price').textContent;
+
+                sup = sup - parseInt(prodPrice.substring(1, prodPrice.length));
+                subPrice.textContent = `$${sup}.00`;
+
+                layers.removeChild(layer);
+
+                // updating cart
+                cartProducts = cartProducts.filter(p => p.name !== title);
+                window.localStorage.setItem('cart', JSON.stringify(cartProducts));
             }
         })
 

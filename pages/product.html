@@ -478,6 +478,9 @@
             checkBox.addEventListener('change', () => {
                 if (checkBox.checked) {
                     total.textContent = `$${Number(total.textContent.substring(1, total.length)) + 10}.00`;
+                    window.localStorage.setItem('checked', 'yes')
+                } else {
+                    window.localStorage.setItem('checked', 'no')
                 }
             })
 
@@ -527,6 +530,17 @@
             addCart.onclick = () => {
                 miniCart.classList.toggle('active')
                 overlay.classList.toggle('active')
+
+                let cartProducts = JSON.parse(window.localStorage.getItem('cart')) || [];
+                cartProducts.push({
+                    name: name,
+                    url: url,
+                    price: price,
+                    multi: cartMulti.textContent,
+                    total: cartPrice.textContent,
+                });
+
+                window.localStorage.setItem('cart', JSON.stringify(cartProducts));
             }
 
             crossBtn.onclick = () => {
