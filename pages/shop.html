@@ -16,7 +16,11 @@
 
     <header class="shop-section-header">
         <nav class="navlist">
-            <div class="logo navitem">FASCO</div>
+            <div class="logo navitem">
+                <a href="../index.html">
+                    FASCO
+                </a>
+            </div>
             <ul class="navlinks navitem">
                 <a href="../index.html">
                     <li>Home</li>
@@ -37,8 +41,10 @@
                 <li><img src="../images/Button ⏵ SVG.png" alt="icon"></li>
                 <li><img src="../images/SVG.png" alt="icon"></li>
                 <li><img src="../images/SVG (1).png" alt="icon"></li>
-                <li><img src="../images/SVG (2).png" alt="icon"></li>
+                <li class="cart-icon"><img src="../images/SVG (2).png" alt="icon"></li>
             </ul>
+
+            <div class="digit"></div>
         </nav>
     </header>
     <div class="title">Fashion</div>
@@ -396,6 +402,23 @@
     </footer>
     
     <script>
+        let cartProducts = JSON.parse(window.localStorage.getItem('cart')) || [];
+
+        let digitEle = document.querySelector('.digit');
+        digitEle.innerHTML = cartProducts.length;
+        
+        if (cartProducts.length === 0) {
+            digitEle.style.display = 'none';
+        }
+
+        let cartIcon = document.querySelector('.cart-icon');
+        cartIcon.onclick = () => {
+            window.location.href = '../pages/cart.html';
+        }
+        
+
+
+
         let cards = document.querySelectorAll('.img-card');
         cards.forEach(card => {
             card.addEventListener('click', () => {

@@ -1806,6 +1806,23 @@ footer p {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: relative;
+}
+
+.shop-section .navlist .digit {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    place-content: center;
+    text-align: center;
+    font-style: var(--fontFamily-volkhov);
+    font-size: 16px;
+    background-color: #ff0606;
+    color: #fff;
+    right: 0;
+    top: 0;
+    transform: translateY(30%);
 }
 
 .shop-section .navlist .logo {
@@ -1831,6 +1848,7 @@ footer p {
     color: #484848;
     font-size: 16px;
     padding: 12px;
+    cursor: pointer;
 }
 
 .shop-section .navlist .navlinks li {

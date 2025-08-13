@@ -17,13 +17,17 @@
 
         <header class="shop-section-header">
             <nav class="navlist">
-                <div class="logo navitem">FASCO</div>
+                <div class="logo navitem">
+                    <a href="../index.html">
+                        FASCO
+                    </a>
+                </div>
                 <ul class="navlinks navitem">
                     <a href="../index.html">
                         <li>Home</li>
                     </a>
 
-                    <a href="#">
+                    <a href="../pages/shop.html">
                         <li>Shop</li>
                     </a>
 
@@ -38,8 +42,9 @@
                     <li><img src="../images/Button ⏵ SVG.png" alt="icon"></li>
                     <li><img src="../images/SVG.png" alt="icon"></li>
                     <li><img src="../images/SVG (1).png" alt="icon"></li>
-                    <li><img src="../images/SVG (2).png" alt="icon"></li>
+                    <li class="cart-icon"><img src="../images/SVG (2).png" alt="icon"></li>
                 </ul>
+                <div class="digit"></div>
             </nav>
         </header>
 
@@ -427,7 +432,23 @@
     </footer>
     <script>
 
+        let cartProducts = JSON.parse(window.localStorage.getItem('cart')) || [];
+
+        let digitEle = document.querySelector('.digit');
+        digitEle.innerHTML = cartProducts.length;
+        
+        if (cartProducts.length === 0) {
+            digitEle.style.display = 'none';
+        }
+
         window.addEventListener('DOMContentLoaded', () => {
+
+
+
+            let cartIcon = document.querySelector('.cart-icon');
+            cartIcon.onclick = () => {
+                window.location.href = '../pages/cart.html';
+            }
 
             // dynamicaly loading the product from url
             const urlParams = new URLSearchParams(window.location.search);
@@ -531,6 +552,8 @@
                 miniCart.classList.toggle('active')
                 overlay.classList.toggle('active')
 
+                digitEle.style.display = 'block';
+
                 let cartProducts = JSON.parse(window.localStorage.getItem('cart')) || [];
                 cartProducts.push({
                     name: name,
@@ -539,6 +562,8 @@
                     multi: cartMulti.textContent,
                     total: cartPrice.textContent,
                 });
+
+                digitEle.innerHTML = cartProducts.length;
 
                 window.localStorage.setItem('cart', JSON.stringify(cartProducts));
             }

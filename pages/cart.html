@@ -17,14 +17,18 @@
 
         <header class="shop-section-header">
             <nav class="navlist">
-                <div class="logo navitem">FASCO</div>
+                <div class="logo navitem">
+                    <a href="../index.html">
+                        FASCO
+                    </a>
+                </div>
                 <ul class="navlinks navitem">
                     <a href="../index.html">
                         <li>Home</li>
                     </a>
 
-                    <a href="#">
-                        <li class="active">Shop</li>
+                    <a href="../pages/shop.html">
+                        <li>Shop</li>
                     </a>
 
                     <a href="#">
@@ -38,8 +42,9 @@
                     <li><img src="../images/Button ⏵ SVG.png" alt="icon"></li>
                     <li><img src="../images/SVG.png" alt="icon"></li>
                     <li><img src="../images/SVG (1).png" alt="icon"></li>
-                    <li><img src="../images/SVG (2).png" alt="icon"></li>
+                    <li class="cart-icon"><img src="../images/SVG (2).png" alt="icon"></li>
                 </ul>
+                <div class="digit"></div>
             </nav>
         </header>
         <div class="title">Shopping Cart</div>
@@ -150,11 +155,26 @@
         let subPrice = document.querySelector('.subtotal-price');
         let checkBox = document.querySelector('.checkbox');
         let checkoutBtn = document.querySelector('.checkout-btn');
+        let digitEle = document.querySelector('.digit');
 
         // pushing all products in cart
         let layers = document.querySelector('.product-layers');
         let cartProducts = JSON.parse(window.localStorage.getItem('cart')) || [];
+        digitEle.innerHTML = cartProducts.length;
 
+        if (cartProducts.length === 0) {
+            digitEle.style.display = 'none';
+        }
+
+
+        let cartIcon = document.querySelector('.cart-icon');
+        cartIcon.onclick = () => {
+            window.location.href = '../pages/cart.html';
+        }
+
+
+
+        // calculating the total shit
         let sup = 0;
 
         cartProducts.forEach(c => {
@@ -322,6 +342,11 @@
 
                 // updating cart
                 cartProducts = cartProducts.filter(p => p.name !== title);
+                digitEle.innerHTML = cartProducts.length;
+
+                if (cartProducts.length === 0) {
+                    digitEle.style.display = 'none';
+                }
                 window.localStorage.setItem('cart', JSON.stringify(cartProducts));
             }
         })
