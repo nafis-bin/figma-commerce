@@ -293,13 +293,6 @@
 
 
         checkoutBtn.onclick = () => {
-            const cartData = {
-                name: encodeURIComponent(name),
-                url: encodeURIComponent(url),
-                subTotal: encodeURIComponent(subPrice.textContent),
-            }
-            window.localStorage.setItem('cart', JSON.stringify(cartData));
-
             window.location.href = '../pages/checkout.html';
         }
 
@@ -317,9 +310,11 @@
             // console.log('clicking on checkbox')
             console.log(`checkbox val: ${checkBox.value}`)
             if (checkBox.checked) {
+                window.localStorage.setItem('checked', 'yes')
                 sup += 10;
                 subPrice.textContent = `$${sup}.00`;
             } else {
+                window.localStorage.setItem('checked', 'no')
                 sup -= 10;
                 subPrice.textContent = `$${sup}.00`;
             }

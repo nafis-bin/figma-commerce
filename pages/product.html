@@ -472,13 +472,6 @@
 
 
             checkoutBtn.onclick = () => {
-                const cartData = {
-                    name: encodeURIComponent(name),
-                    url: encodeURIComponent(url),
-                    subTotal: encodeURIComponent(cartPrice.textContent),
-                }
-                window.localStorage.setItem('cart', JSON.stringify(cartData));
-
                 window.location.href = '../pages/checkout.html';
             }
 
@@ -577,13 +570,7 @@
             // view btn leads to cart page
             const viewBtn = document.querySelector('.view-btn');
             viewBtn.onclick = () => {
-                name = encodeURIComponent(name);
-                url = encodeURIComponent(url);
-                price = encodeURIComponent(price);
-                multi = encodeURIComponent(cartMulti.textContent);
-                total = encodeURIComponent(total.textContent);
-
-                window.location.href = `../pages/cart.html?name=${name}&url=${url}&price=${price}&multi=${multi}&total=${total}&checked=${checkBox.value}`;
+                window.location.href = '../pages/cart.html';
             }
         });
     </script>

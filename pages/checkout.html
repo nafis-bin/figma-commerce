@@ -17,13 +17,17 @@
 
         <header class="shop-section-header">
             <nav class="navlist">
-                <div class="logo navitem">FASCO</div>
+                <a href="../index.html">
+                    <div class="logo navitem">
+                            FASCO
+                    </div>
+                </a>
                 <ul class="navlinks navitem">
                     <a href="../index.html">
                         <li>Home</li>
                     </a>
 
-                    <a href="#">
+                    <a href="../pages/shop.html">
                         <li>Shop</li>
                     </a>
 
@@ -123,16 +127,18 @@
 
 
                 <div class="product-dets">
-                    <div class="product">
-                        <div class="img-container">
-                            <img class="img-url" src="../images/Rectangle 19265.png" alt="">
-                        </div>
-                        <div class="info">
-                            <div class="prod-title">Mini dress with ruffled straps</div>
-                            <div class="color-title">Red</div>
-                        </div>
+                    <div class="checkout-layers">
+                        <!-- <div class="product">
+                            <div class="img-container">
+                                <img class="img-url" src="../images/Rectangle 19265.png" alt="">
+                            </div>
+                            <div class="info">
+                                <div class="prod-title">Mini dress with ruffled straps</div>
+                                <div class="color-title">Red</div>
+                            </div>
 
-                        <div class="prod-price">$100</div>
+                            <div class="prod-price">$100</div>
+                        </div> -->
                     </div>
                     <div class="discount-section">
                         <input type="text" class="discount-input" placeholder="Discount code">
@@ -192,27 +198,85 @@
 
     <script>
         // console.table(window.localStorage.getItem('cart'))
-        const { name, url, subTotal } = JSON.parse(window.localStorage.getItem('cart'));
+        // const { name, url, subTotal } = JSON.parse(window.localStorage.getItem('cart'));
         // console.table({
         //     name,
         //     url,
         //     subTotal
         // })
 
-        const prodTitle = document.querySelector('.prod-title');
-        const prodPrice = document.querySelector('.prod-price');
-        const img = document.querySelector('.img-url');
+        // const prodTitle = document.querySelector('.prod-title');
+        // const prodPrice = document.querySelector('.prod-price');
+        // const img = document.querySelector('.img-url');
         const subTotalValue = document.querySelector('.value.subtotal');
         const totalEle = document.querySelector('.value.total');
         
-        prodTitle.textContent = decodeURIComponent(name);
-        img.src = decodeURIComponent(url);
+        // prodTitle.textContent = decodeURIComponent(name);
+        // img.src = decodeURIComponent(url);
 
-        subTotalValue.textContent = decodeURIComponent(subTotal);
-        prodPrice.textContent = decodeURIComponent(subTotal);
+        // subTotalValue.textContent = decodeURIComponent(subTotal);
+        // prodPrice.textContent = decodeURIComponent(subTotal);
 
-        let totalVal = parseInt(subTotalValue.textContent.substring(1, subTotalValue.textContent.length)) + 40;
-        totalEle.textContent = `$${totalVal}.00`;
+        // let totalVal = parseInt(subTotalValue.textContent.substring(1, subTotalValue.textContent.length)) + 40;
+        // totalEle.textContent = `$${totalVal}.00`;
+
+        let layers = document.querySelector('.checkout-layers');
+        let cartProducts = JSON.parse(window.localStorage.getItem('cart')) || [];
+
+
+        // shipping price
+        let sup = 40;
+
+        let checked = window.localStorage.getItem('checked');
+        if (checked === 'yes') {
+            sup += 10;
+        } 
+
+
+
+        cartProducts.forEach(item => {
+            const product = document.createElement('div');
+            product.classList.add('product')
+
+            const imgContainer = document.createElement('div');
+            imgContainer.classList.add('img-container')
+
+            const img = document.createElement('img');
+            img.classList.add('img-url');
+            img.src = item.url;
+            
+            const info = document.createElement('div');
+            info.classList.add('info')
+
+            const prodTitle = document.createElement('div');
+            prodTitle.classList.add('prod-title');
+            prodTitle.textContent = item.name;
+
+            const colorTitle = document.createElement('div');
+            colorTitle.classList.add('color-title');
+            colorTitle.textContent = 'Red';
+
+            const prodPrice = document.createElement('div');
+            prodPrice.classList.add('prod-price');
+            prodPrice.textContent = item.total;
+
+            sup += parseInt(item.total.substring(1, item.total.length));
+
+            imgContainer.append(img);
+            info.append(prodTitle, colorTitle);
+
+            product.append(
+                imgContainer,
+                info,
+                prodPrice
+            )
+            
+            layers.append(product);
+
+        })
+
+        subTotalValue.textContent = `$${sup - 40}.00`;
+        totalEle.textContent = `$${sup}.00`;
 
     </script>
 </body>
