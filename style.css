@@ -99,6 +99,7 @@ body {
     font-size: 52px;
     line-height: 52px;
     cursor: pointer;
+    color: #484848;
 }
 
 
@@ -909,6 +910,7 @@ body {
 .review-section {
     width: 1920px;
     height: 840px;
+    margin-inline: auto;
     background-color: #fafafa;
     /* background-color: red; */
     padding-block: 100px 58px;

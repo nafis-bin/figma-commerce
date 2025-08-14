@@ -91,19 +91,19 @@
                     <ul class="clock-list">
 
                         <li class="clock-item">
-                            <div class="digit">02</div>
+                            <div class="digit days">02</div>
                             <div class="type">Days</div>
                         </li>
                         <li class="clock-item">
-                            <div class="digit">06</div>
+                            <div class="digit hours">06</div>
                             <div class="type">Hr</div>
                         </li>
                         <li class="clock-item">
-                            <div class="digit">05</div>
+                            <div class="digit minutes">05</div>
                             <div class="type">Mins</div>
                         </li>
                         <li class="clock-item">
-                            <div class="digit">30</div>
+                            <div class="digit seconds">30</div>
                             <div class="type">Sec</div>
                         </li>
                     </ul>
@@ -352,12 +352,12 @@
         <div class="blinder-container">
 
             <div class="img-wrapper">
-                <img class="img" src="./images/image (5).png" alt="women">
-                <img class="suspender" src="./images/point.png">
-                <img class="flat-cap" src="./images/point (1).png" alt="">
-                <img class="hugo-boss-1" src="./images/point (2).png" alt="">
-                <img class="hugo-boss-2" src="./images/point (3).png" alt="">
-                <img class="santoni" src="./images/point (4).png" alt="">
+                <img class="img" src="../images/image (5).png" alt="women">
+                <img class="suspender" src="../images/point.png">
+                <img class="flat-cap" src="../images/point (1).png" alt="">
+                <img class="hugo-boss-1" src="../images/point (2).png" alt="">
+                <img class="hugo-boss-2" src="../images/point (3).png" alt="">
+                <img class="santoni" src="../images/point (4).png" alt="">
             </div>
         </div>
         <div class="peaky-info">
@@ -633,6 +633,25 @@
         }
     })
 
+    // makes the dates dynamic for deals of the month section
+    let targetDate = new Date().getTime() + (2 * 24 * 60 * 60 * 1000) + (6 * 60 * 60 * 1000) + (5 * 60 * 1000) + (30 * 1000);
+
+    setInterval(() => {
+        let now = new Date().getTime();
+        let distance = targetDate - now;
+
+        let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+
+        document.querySelector('.days').textContent = days < 10 ? '0' + days : days;
+        document.querySelector('.hours').textContent = hours < 10 ? '0' + hours : hours;
+        document.querySelector('.minutes').textContent = minutes < 10 ? '0' + minutes : minutes;
+        document.querySelector('.seconds').textContent = seconds < 10 ? '0' + seconds : seconds;
+
+    }, 1000)
 </script>
 </body>
 </html>
