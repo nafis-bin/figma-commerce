@@ -121,13 +121,13 @@
                 <div class="sale-banner">
                     <div class="sale-txt">Hurry up! Sale ends in</div>
                     <div class="time">
-                        <div class="dd part">00</div>
+                        <div class="dd part days">00</div>
                         <div class="separator part">:</div>
-                        <div class="hr part">05</div>
+                        <div class="hr part hours">05</div>
                         <div class="separator part">:</div>
-                        <div class="mm part">59</div>
+                        <div class="mm part minutes">59</div>
                         <div class="separator part">:</div>
-                        <div class="ss part">47</div>
+                        <div class="ss part seconds">47</div>
                     </div>
                 </div>
                 <div class="stock-left">
@@ -348,19 +348,19 @@
                     <ul class="clock-list">
 
                         <li class="clock-item">
-                            <div class="digit">02</div>
+                            <div class="digit days">02</div>
                             <div class="type">Days</div>
                         </li>
                         <li class="clock-item">
-                            <div class="digit">06</div>
+                            <div class="digit hours">06</div>
                             <div class="type">Hr</div>
                         </li>
                         <li class="clock-item">
-                            <div class="digit">05</div>
+                            <div class="digit minutes">05</div>
                             <div class="type">Mins</div>
                         </li>
                         <li class="clock-item">
-                            <div class="digit">30</div>
+                            <div class="digit seconds">30</div>
                             <div class="type">Sec</div>
                         </li>
                     </ul>
@@ -575,6 +575,44 @@
             viewBtn.onclick = () => {
                 window.location.href = '../pages/cart.html';
             }
+            
+            // dynamically update the timing bar
+            let targetDate = new Date().getTime() + (2 * 24 * 60 * 60 * 1000) + (6 * 60 * 60 * 1000) + (5 * 60 * 1000) + (30 * 1000);
+
+            setInterval(() => {
+                let now = new Date().getTime();
+                let distance = targetDate - now;
+
+                let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+
+                let dayEles = document.querySelectorAll('.days');
+                let hourEles = document.querySelectorAll('.hours');
+                let minEles = document.querySelectorAll('.minutes');
+                let secEles = document.querySelectorAll('.seconds');
+
+                dayEles.forEach(day => {
+                    day.textContent = days < 10 ? '0' + days : days;
+                })
+
+                hourEles.forEach(hour => {
+                    hour.textContent = hours < 10 ? '0' + hours : hours;
+                })
+
+                minEles.forEach(minute => {
+                    minute.textContent = minutes < 10 ? '0' + minutes : minutes;
+                })
+
+                secEles.forEach(second => {
+                    second.textContent = seconds < 10 ? '0' + seconds : seconds;
+                })
+
+
+            }, 1000)
+
         });
     </script>
 </body>
