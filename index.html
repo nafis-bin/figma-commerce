@@ -80,9 +80,9 @@
                 Deals Of The Month
             </div>
             <div class="description">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
-                Scelerisque duis ultrices sollicitudin aliquam sem.<br>
-                Scelerisque duis ultrices sollicitudin 
+                Discover this month’s hottest offers, with exclusive discounts
+                you won’t want to miss. Shop top picks and <br>
+                save big while stocks last.
             </div>
             <button class="btn">BUY NOW</button>
             <div class="timer">
@@ -117,14 +117,26 @@
         </div>
 
         <div class="img-box">
-            <div class="image-container">
+            <div class="image-container toggle-width" data-id="1">
                 <img src="./images/image (2).png" alt="model">
             </div>
-            <div class="image-container">
+            <div class="image-container" data-id="2">
                 <img src="./images/image (3).png" alt="model">
             </div>
-            <div class="image-container">
+            <div class="image-container" data-id="3">
                 <img src="./images/image (4).png" alt="model">
+            </div>
+            <div class="image-container" data-id="4">
+                <img src="./images/image (3).png" alt="model">
+            </div>
+            <div class="image-container" data-id="5">
+                <img src="./images/image (2).png" alt="model">
+            </div>
+            <div class="image-container" data-id="6">
+                <img src="./images/image (2).png" alt="model">
+            </div>
+            <div class="image-container" data-id="7">
+                <img src="./images/image (2).png" alt="model">
             </div>
         </div>
 
@@ -149,9 +161,9 @@
         <div class="header">
             <p class="title">New Arrivals</p>
             <p class="description">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                Scelerisque duis ultrices sollicitudin aliquam sem. 
-                Scelerisque duis ultrices sollicitudin.
+                Check out the latest styles just landed in store. 
+                Fresh collections designed to keep you ahead 
+                of the trend this season.
             </p>
         </div>
         <div class="catagories">
@@ -368,10 +380,10 @@
             <div class="description-marker">DESCRIPTION</div>
 
             <p class="description">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
-                 Scelerisque duis ultrices sollicitudin aliquam sem. Scelerisque<br>
-                  duis ultrices sollicitudin. Lorem ipsum dolor sit amet, consectetur<br>
-                  adipiscing elit. Scelerisque duis.
+                Elegant and lightweight, this dress is crafted for all-day comfort.<br>
+                Designed with a flattering fit, it pairs effortlessly with any look.<br>
+                Soft fabric ensures style and ease. Perfect for both casual days<br>
+                and special evenings.
             </p>
             <div class="size">
                 <div class="text">Size:</div>
@@ -418,10 +430,8 @@
         <div class="text">
             <p class="title">Follow Us On Instagram</p>
             <p class="description">
-                Lorem ipsum dolor sit amet, 
-                consectetur adipiscing elit. Scelerisque duis<br> ultrices 
-                sollicitudin aliquam sem. Scelerisque duis ultrices
-                 sollicitudin  
+                Stay inspired with our latest looks, and daily updates.<br>
+                Follow us for exclusive previews, trends, and behind-the-scenes moments.
             </p>
         </div>
 
@@ -453,7 +463,7 @@
 
     <div class="review-section">
         <p class="title">This Is What Our Customers Say</p>
-        <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Scelerisque duis</p>
+        <p class="description">Don't missout the oppotunity to become a member</p>
         <div class="img-list-cards">
 
             <div class="img-list">
@@ -531,7 +541,9 @@
 
         <div class="news-letter">
             <p class="title">Subscribe To Our Newsletter</p>
-            <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Scelerisque duis ultrices sollicitudin aliquam sem. Scelerisque duis ultrices sollicitudin </p>
+            <p class="description">
+                Join our mailing list for exclusive deals, fashion updates, and style inspiration. Be the first to know about new arrivals and special offers
+            </p>
             <input type="text" placeholder="micheal@ymail.com">
             <button class="btn">Subscribe Now</button>
         </div>
@@ -652,6 +664,53 @@
         document.querySelector('.seconds').textContent = seconds < 10 ? '0' + seconds : seconds;
 
     }, 1000)
+
+    let firstCardWidth = document.querySelector('.img-box .image-container').clientWidth;
+    let leftArrow = document.querySelector('.left-arrow');
+    let rightArrow = document.querySelector('.right-arrow');
+    let imgBox = document.querySelector('.img-box');
+
+    let currId = 1;
+
+    leftArrow.onclick = () => {
+        currId--;
+        if (currId < 1) {
+            currId = 1;
+        }
+
+        console.log('clicking left')
+        imgBox.scrollLeft -= 408 + 24;
+        const currImg = document.querySelector(`[data-id='${currId}']`);
+        const prevImg = document.querySelector('.toggle-width');
+
+        console.table({
+            curr: currImg,
+            prev: prevImg,
+        })
+        prevImg.classList.remove('toggle-width');
+        currImg.classList.toggle('toggle-width');
+    }
+
+    rightArrow.onclick = () => {
+        currId++;
+        if (currId > 4) {
+            currId = 4;
+            return;
+        }
+
+        console.log('clicking right')
+        console.log(firstCardWidth);
+        imgBox.scrollLeft += 408 + 24;
+        const currImg = document.querySelector(`[data-id='${currId}']`);
+        const prevImg = document.querySelector('.toggle-width');
+
+        console.table({
+            curr: currImg,
+            prev: prevImg,
+        })
+        prevImg.classList.remove('toggle-width');
+        currImg.classList.toggle('toggle-width');
+    }
 </script>
 </body>
 </html>

@@ -390,7 +390,7 @@ body {
 .deals-section {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    overflow: hidden;
+    overflow-x: hidden;
     height: 908px;
     padding-top: 178px;
     padding-bottom: 145px;
@@ -413,21 +413,32 @@ body {
 }
 
 .deals-section .img-box {
+    width: 1596px;
+    height: 588px;
     display: flex;
     gap: 24px;
-    /* overflow: hidden; */
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
 }
 
 .deals-section .img-box .image-container {
     width: 372px;
     height: 486px;
+    flex-shrink: 0;
     /* object-fit: contain; */
 }
 
-.deals-section .image-container:first-child {
+.deals-section .image-container.toggle-width {
     width: 408px;
     height: 585px;
 }
+
+/* .deals-section .image-container:first-child {
+    width: 408px;
+    height: 585px;
+} */
 
 .deals-section .image-container img {
     width: 100%;
@@ -872,6 +883,7 @@ body {
     line-height: 26px;
     color: #8a8a8a;
     margin-top: 20px;
+    text-align: center;
 }
 
 .instagram-section .img-list {
