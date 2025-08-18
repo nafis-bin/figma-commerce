@@ -1,44 +1,172 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        .section {
-            width: 100%;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .container {
-            width: 300px;
-            height: 300px;
-            background-color: #f1f1f1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .circle {
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            background-color: blue;
-            /* filter: drop-shadow(0, 0, 0, 1, #000); */
-            /* border: 1px solid black; */
-            box-shadow: inset 0px 0px 0px 4px #ffffff,
-                        0px 0px 0px 1px #000;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Testimonial Carousel</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
 
-        }
-    </style>
+    .carousel-container {
+      max-width: 900px;
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .carousel-track {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .testimonial {
+      min-width: 100%;
+      box-sizing: border-box;
+      background: white;
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .testimonial img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+    }
+
+    .testimonial-content {
+      max-width: 500px;
+    }
+
+    .testimonial-content p {
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+    }
+
+    .stars {
+      color: orange;
+      margin-bottom: 10px;
+    }
+
+    .name {
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    .role {
+      color: gray;
+      font-size: 0.9rem;
+    }
+
+    .carousel-buttons {
+      position: absolute;
+      bottom: 15px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 10px;
+    }
+
+    .carousel-buttons button {
+      background: white;
+      border: none;
+      padding: 10px;
+      border-radius: 50%;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .carousel-buttons button:hover {
+      background: #ddd;
+    }
+  </style>
 </head>
 <body>
-    <div class="section">
-        <div class="container">
-            <div class="circle"></div>
+  <div class="carousel-container">
+    <div class="carousel-track">
+      
+      <!-- Slide 1 -->
+      <div class="testimonial">
+        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="James K">
+        <div class="testimonial-content">
+          <p>"You won't regret it. I would like to personally thank you for your outstanding product. Absolutely wonderful!"</p>
+          <div class="stars">★★★★★</div>
+          <div class="name">James K.</div>
+          <div class="role">Traveler</div>
         </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="testimonial">
+        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah T">
+        <div class="testimonial-content">
+          <p>"This is the best service I’ve ever used. Everything was easy, smooth, and stress-free. Highly recommended!"</p>
+          <div class="stars">★★★★★</div>
+          <div class="name">Sarah T.</div>
+          <div class="role">Entrepreneur</div>
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="testimonial">
+        <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Helen W">
+        <div class="testimonial-content">
+          <p>"Exactly what I was looking for. Thank you for making it painless and hassle free. All the features are great."</p>
+          <div class="stars">★★★★★</div>
+          <div class="name">Helen W.</div>
+          <div class="role">Customer</div>
+        </div>
+      </div>
+
     </div>
+
+    <!-- Buttons -->
+    <div class="carousel-buttons">
+      <button id="prev">◀</button>
+      <button id="next">▶</button>
+    </div>
+  </div>
+
+  <script>
+    const track = document.querySelector(".carousel-track");
+    const slides = Array.from(track.children);
+    const prevBtn = document.getElementById("prev");
+    const nextBtn = document.getElementById("next");
+    let currentIndex = 0;
+
+    function updateCarousel() {
+      track.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+
+    nextBtn.addEventListener("click", () => {
+      currentIndex = (currentIndex + 1) % slides.length;
+      updateCarousel();
+    });
+
+    prevBtn.addEventListener("click", () => {
+      currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+      updateCarousel();
+    });
+
+    // Optional: auto-slide every 5s
+    setInterval(() => {
+      currentIndex = (currentIndex + 1) % slides.length;
+      updateCarousel();
+    }, 1000);
+  </script>
 </body>
 </html>

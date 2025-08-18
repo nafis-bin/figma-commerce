@@ -24,7 +24,7 @@
                 <h3>Forget Password</h3>
                 <div class="input-line">
                     <input type="text" placeholder="First Name">
-                    <input type="text" placeholder="Email Address" class="mail"> 
+                    <input type="text" placeholder="Email Address" class="email"> 
                 </div>
                 <div class="input-line">
                     <input type="text" placeholder="Last Name">
@@ -36,16 +36,24 @@
         </div>
     </div>
     <script>
-        const mail = document.querySelector('.mail').value;
+        console.log(document.querySelector('.email').innerHTML)
         const confirm_btn = document.querySelector('.code-btn');
-        const user = JSON.parse(window.localStorage.getItem('user'));
+        const users = JSON.parse(window.localStorage.getItem('users'));
+
+        // console.table(users)
 
         confirm_btn.addEventListener('click', () => {
+            const mail = document.querySelector('.email').value;
+            // console.log(mail)
+            let found = users.find(u => u.mail === mail);
             
-            if (user.mail === mail) {
+            console.log(found)
+            
+            if (found) {
+                window.localStorage.setItem('mail', mail)
                 window.location.href = '/pages/confirm.html';
             } else {
-                window.location.href = '../pages/error.html';
+                // window.location.href = '../pages/error.html';
             }
         })
     </script>
