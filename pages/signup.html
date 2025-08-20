@@ -84,6 +84,8 @@
                 let updatedUsers = [...users, { mail, password }];
                 window.localStorage.setItem('users', JSON.stringify(updatedUsers));
 
+                // console.table(updatedUsers)
+
                 window.location.href = '../index.html';
             } else {
                 window.location.href = '../pages/error.html';

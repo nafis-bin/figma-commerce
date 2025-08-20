@@ -56,13 +56,13 @@
             const mail = document.querySelector('.mail').value;
             const password = document.querySelector('.password').value;
 
-            console.table({
-                mail,
-                password
-            });
+            // console.table({
+            //     mail,
+            //     password
+            // });
 
             const users = JSON.parse(window.localStorage.getItem('users'));
-            console.table(users);
+            // console.table(users);
 
             let user = users.find(u => u.mail === mail);
             if (!user || (mail !== user.mail || password !== user.password)) {
