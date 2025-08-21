@@ -491,7 +491,7 @@ body {
     margin-block: 150px;
     margin-inline: auto;
     width: 1280px;
-    height: 1329px;
+    height: auto;
     /* background-color: cyan; */
     display: flex;
     flex-direction: column;
@@ -561,6 +561,10 @@ body {
     border-radius: 10px;
     box-shadow: 0px 40px 90px 0px rgba(0, 0, 0, 0.06);
     cursor: pointer;
+}
+
+.new-arrivals-section .product-cards .card.hidden {
+    display: none;
 }
 
 .product-cards .card img {
