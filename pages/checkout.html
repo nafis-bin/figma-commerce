@@ -225,29 +225,9 @@
     
 
     <script>
-        // console.table(window.localStorage.getItem('cart'))
-        // const { name, url, subTotal } = JSON.parse(window.localStorage.getItem('cart'));
-        // console.table({
-        //     name,
-        //     url,
-        //     subTotal
-        // })
-
-        // const prodTitle = document.querySelector('.prod-title');
-        // const prodPrice = document.querySelector('.prod-price');
-        // const img = document.querySelector('.img-url');
         const subTotalValue = document.querySelector('.value.subtotal');
         const totalEle = document.querySelector('.value.total');
         
-        // prodTitle.textContent = decodeURIComponent(name);
-        // img.src = decodeURIComponent(url);
-
-        // subTotalValue.textContent = decodeURIComponent(subTotal);
-        // prodPrice.textContent = decodeURIComponent(subTotal);
-
-        // let totalVal = parseInt(subTotalValue.textContent.substring(1, subTotalValue.textContent.length)) + 40;
-        // totalEle.textContent = `$${totalVal}.00`;
-
         let layers = document.querySelector('.checkout-layers');
         let cartProducts = JSON.parse(window.localStorage.getItem('cart')) || [];
 
@@ -312,6 +292,9 @@
 
         subTotalValue.textContent = `$${sup - 40}.00`;
         totalEle.textContent = `$${sup}.00`;
+
+        let cartBtn = document.querySelector('.digit.cart');
+        cartBtn.onclick = () => window.location.href = './cart.html';
 
     </script>
 </body>
