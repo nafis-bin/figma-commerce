@@ -63,7 +63,7 @@ body {
 
 @font-face {
   font-family: 'Digital Numbers';
-  src: url('/assets/fonts/DigitalNumbers-Regular.woff') format('woff');
+  src: url('./assets/fonts/DigitalNumbers-Regular.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
