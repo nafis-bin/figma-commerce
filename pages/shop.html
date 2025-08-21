@@ -408,8 +408,13 @@
     <script>
         let cartProducts = JSON.parse(window.localStorage.getItem('cart')) || [];
 
+        console.log(cartProducts);
+
         let digitEle = document.querySelector('.digit.cart');
         digitEle.innerHTML = cartProducts.length;
+
+        console.log(digitEle.innerHTML);
+
         
         if (cartProducts.length === 0) {
             digitEle.style.display = 'none';
