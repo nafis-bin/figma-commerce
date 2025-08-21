@@ -65,7 +65,7 @@
                     <li><img src="../images/Button ⏵ SVG.png" alt="icon"></li>
                     <li><img src="../images/SVG.png" alt="icon"></li>
                     <li><img src="../images/SVG (1).png" alt="icon"></li>
-                    <li><img src="../images/SVG (2).png" alt="icon"></li>
+                    <li class="cart-btn"><img src="../images/SVG (2).png" alt="icon"></li>
                 </ul>
                 <div class="digit cart"></div>
             </nav>
@@ -293,8 +293,10 @@
         subTotalValue.textContent = `$${sup - 40}.00`;
         totalEle.textContent = `$${sup}.00`;
 
-        let cartBtn = document.querySelector('.digit.cart');
-        cartBtn.onclick = () => window.location.href = '../pages/cart.html';
+        let cartBtn = document.querySelector('.cart-btn');
+        cartBtn.onclick = () => {
+            window.location.href = '../pages/cart.html';
+        }
 
     </script>
 </body>
