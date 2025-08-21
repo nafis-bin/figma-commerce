@@ -173,15 +173,15 @@
             <button class="btn new-arrival">Discount Deals</button>
         </div>
         <div class="product-cards">
-            <div class="card">
 
-                <img class="card-img" src="./images/Images (1).png" alt="">
+            <div class="card" data-img="../images/Link ⏵ responsive-image.png" data-name="Rounded Red Hat" data-price="$8.00">
+                <img class="card-img" src="./images/Link ⏵ responsive-image.png">
 
                 <div class="card-grid">
 
                     <div class="product-info">
                         <div class="name">
-                            <p class="title">Shiny Dress</p>
+                            <p class="title">Rounded Red Hat</p>
                             <p class="brand">Al Karam</p>
                         </div>
                     </div>
@@ -198,20 +198,18 @@
                         (4.1k) Customer Reviews
                     </div>
 
-                    <div class="price">$95.50</div>
+                    <div class="price">$8.00</div>
                     <div class="stock">Almost Sold Out</div>
                 </div>
             </div>
-
-             <div class="card">
-
-                <img class="card-img" src="./images/Images (2).png" alt="">
+            <div class="card" data-img="../images/57.jpg.png" data-name="Linen Blend Shirt" data-price="$17.00">
+                <img class="card-img" src="./images/57.jpg.png">
 
                 <div class="card-grid">
 
                     <div class="product-info">
                         <div class="name">
-                            <p class="title">Long Dress</p>
+                            <p class="title">Linen Blend Shirt</p>
                             <p class="brand">Al Karam</p>
                         </div>
                     </div>
@@ -228,20 +226,18 @@
                         (4.1k) Customer Reviews
                     </div>
 
-                    <div class="price">$95.50</div>
+                    <div class="price">$17.00</div>
                     <div class="stock">Almost Sold Out</div>
                 </div>
             </div>
-
-             <div class="card">
-
-                <img class="card-img" src="./images/Images (3).png" alt="">
+            <div class="card" data-img="../images/Link ⏵ responsive-image (1).png" data-name="Long-Sleeve Coat" data-price="$106.00">
+                <img class="card-img" src="./images/Link ⏵ responsive-image (1).png">
 
                 <div class="card-grid">
 
                     <div class="product-info">
                         <div class="name">
-                            <p class="title">Full Sweater</p>
+                            <p class="title">Long Sleve Coat</p>
                             <p class="brand">Al Karam</p>
                         </div>
                     </div>
@@ -258,20 +254,18 @@
                         (4.1k) Customer Reviews
                     </div>
 
-                    <div class="price">$95.50</div>
+                    <div class="price">$106.00</div>
                     <div class="stock">Almost Sold Out</div>
                 </div>
             </div>
-
-             <div class="card">
-
-                <img class="card-img" src="./images/Images (4).png" alt="">
+            <div class="card" data-img="../images/Link ⏵ responsive-image (2).png" data-name="Boxy Denim Hat" data-price="$25.00">
+                <img class="card-img" src="./images/Link ⏵ responsive-image (2).png">
 
                 <div class="card-grid">
 
                     <div class="product-info">
                         <div class="name">
-                            <p class="title">White Dress</p>
+                            <p class="title">Boxy Denim Hat</p>
                             <p class="brand">Al Karam</p>
                         </div>
                     </div>
@@ -288,20 +282,18 @@
                         (4.1k) Customer Reviews
                     </div>
 
-                    <div class="price">$95.50</div>
+                    <div class="price">$25.00</div>
                     <div class="stock">Almost Sold Out</div>
                 </div>
             </div>
-
-             <div class="card">
-
-                <img class="card-img" src="./images/Images (5).png" alt="">
+            <div class="card" data-img="../images/Link ⏵ responsive-image (3).png" data-name="Linen Plain Top" data-price="$25.00">
+                <img class="card-img" src="./images/Link ⏵ responsive-image (3).png">
 
                 <div class="card-grid">
 
                     <div class="product-info">
                         <div class="name">
-                            <p class="title">Colorful Dress</p>
+                            <p class="title">Linen Plain Top</p>
                             <p class="brand">Al Karam</p>
                         </div>
                     </div>
@@ -318,20 +310,18 @@
                         (4.1k) Customer Reviews
                     </div>
 
-                    <div class="price">$95.50</div>
+                    <div class="price">$25.00</div>
                     <div class="stock">Almost Sold Out</div>
                 </div>
             </div>
-
-             <div class="card">
-
-                <img class="card-img" src="./images/Images (6).png" alt="">
+            <div class="card" data-img="../images/Link ⏵ responsive-image (4).png" data-name="Oversized T-shirt" data-price="$11.00">
+                <img class="card-img" src="./images/Link ⏵ responsive-image (4).png">
 
                 <div class="card-grid">
 
                     <div class="product-info">
                         <div class="name">
-                            <p class="title">White Shirt</p>
+                            <p class="title">Oversized T shirt</p>
                             <p class="brand">Al Karam</p>
                         </div>
                     </div>
@@ -348,10 +338,14 @@
                         (4.1k) Customer Reviews
                     </div>
 
-                    <div class="price">$95.50</div>
+                    <div class="price">$11.00</div>
                     <div class="stock">Almost Sold Out</div>
                 </div>
             </div>
+
+
+
+            
 
             
         </div>
@@ -702,6 +696,18 @@
         document.querySelector('.seconds').textContent = seconds < 10 ? '0' + seconds : seconds;
 
     }, 1000)
+
+    let cards = document.querySelectorAll('.product-cards .card');
+    cards.forEach(card => {
+        card.onclick = () => {
+            var img = encodeURIComponent(card.dataset.img)
+            var name = encodeURIComponent(card.dataset.name)
+            var price = encodeURIComponent(card.dataset.price)
+            
+
+            window.location.href = `/pages/product.html?name=${name}&url=${img}&price=${price}`;
+        }
+    })
 
 </script>
 </body>
