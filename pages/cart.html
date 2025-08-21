@@ -160,6 +160,8 @@
         // pushing all products in cart
         let layers = document.querySelector('.product-layers');
         let cartProducts = JSON.parse(window.localStorage.getItem('cart')) || [];
+        console.table(cartProducts)
+
         digitEle.innerHTML = cartProducts.length;
 
         if (cartProducts.length === 0) {

@@ -408,7 +408,7 @@
     <script>
         let cartProducts = JSON.parse(window.localStorage.getItem('cart')) || [];
 
-        console.log(cartProducts);
+        console.log(cartProducts.length);
 
         let digitEle = document.querySelector('.digit.cart');
         digitEle.innerHTML = cartProducts.length;
