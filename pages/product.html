@@ -350,7 +350,6 @@
         </div>
     </div>
 
-    
     <div class="deals-section">
         <div class="deals-container">
             <div class="title">
@@ -394,25 +393,25 @@
         </div>
 
         <div class="img-box">
-            <div class="image-container">
+            <div class="image-container toggle-width" data-id="1">
                 <img src="../images/image (2).png" alt="model">
             </div>
-            <div class="image-container">
+            <div class="image-container" data-id="2">
                 <img src="../images/image (3).png" alt="model">
             </div>
-            <div class="image-container">
+            <div class="image-container" data-id="3">
                 <img src="../images/image (4).png" alt="model">
             </div>
-            <div class="image-container">
+            <div class="image-container" data-id="4">
                 <img src="../images/image (3).png" alt="model">
             </div>
-            <div class="image-container">
+            <div class="image-container" data-id="5">
                 <img src="../images/image (2).png" alt="model">
             </div>
-            <div class="image-container">
+            <div class="image-container" data-id="6">
                 <img src="../images/image (2).png" alt="model">
             </div>
-            <div class="image-container">
+            <div class="image-container" data-id="7">
                 <img src="../images/image (2).png" alt="model">
             </div>
         </div>
@@ -433,6 +432,8 @@
         </div>
 
     </div>
+    
+    
 
 
     <div class="ending-section">
@@ -660,6 +661,70 @@
             }, 1000)
 
         });
+
+        let arrows = document.querySelectorAll('.arrow');
+
+        let imgBox = document.querySelector('.img-box');
+        let currId = 1;
+        arrows.forEach(arrow => {
+            arrow.onclick = () => {
+                // console.log('click happening')
+                let activeBtn = document.querySelector('.dot-wrapper.active');
+
+                if (arrow.classList.contains('left-arrow')) {
+                    let prev = activeBtn.previousElementSibling;
+                    if (prev && prev.classList.contains('dot-wrapper')) {
+                        activeBtn.classList.remove('active');
+                        prev.classList.toggle('active');
+                    }
+
+                    currId--;
+                    if (currId < 1) {
+                        currId = 1;
+                    }
+
+                    console.log('clicking left')
+                    imgBox.scrollLeft -= 408 + 24;
+                    const currImg = document.querySelector(`[data-id='${currId}']`);
+                    const prevImg = document.querySelector('.toggle-width');
+
+                    console.table({
+                        curr: currImg,
+                        prev: prevImg,
+                    })
+                    prevImg.classList.remove('toggle-width');
+                    currImg.classList.toggle('toggle-width');
+                    return;
+                }
+
+                let next = activeBtn.nextElementSibling;
+                if (next && next.classList.contains('dot-wrapper')) {
+                    activeBtn.classList.remove('active');
+                    next.classList.toggle('active');
+
+                    currId++;
+                    if (currId > 4) {
+                        currId = 4;
+                        return;
+                    }
+
+                    console.log('clicking right')
+                    // console.log(firstCardWidth);
+                    imgBox.scrollLeft += 408 + 24;
+                    const currImg = document.querySelector(`[data-id='${currId}']`);
+                    const prevImg = document.querySelector('.toggle-width');
+
+                    console.table({
+                        curr: currImg,
+                        prev: prevImg,
+                    })
+                    prevImg.classList.remove('toggle-width');
+                    currImg.classList.toggle('toggle-width');
+                }
+
+
+            }
+        })
     </script>
 </body>
 </html>
