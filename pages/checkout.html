@@ -44,6 +44,7 @@
                     <li><img src="../images/SVG (1).png" alt="icon"></li>
                     <li><img src="../images/SVG (2).png" alt="icon"></li>
                 </ul>
+                <div class="digit cart"></div>
             </nav>
         </header>
         <div class="title">Checkout</div>
@@ -226,6 +227,13 @@
 
         let layers = document.querySelector('.checkout-layers');
         let cartProducts = JSON.parse(window.localStorage.getItem('cart')) || [];
+
+        let digitEle = document.querySelector('.digit.cart');
+        digitEle.innerHTML = cartProducts.length;
+
+        if (cartProducts.length === 0) {
+            digitEle.style.display = 'none';
+        }
 
 
         // shipping price

@@ -44,7 +44,7 @@
                     <li><img src="../images/SVG (1).png" alt="icon"></li>
                     <li class="cart-icon"><img src="../images/SVG (2).png" alt="icon"></li>
                 </ul>
-                <div class="digit"></div>
+                <div class="digit cart"></div>
             </nav>
         </header>
 
@@ -450,7 +450,7 @@
 
         let cartProducts = JSON.parse(window.localStorage.getItem('cart')) || [];
 
-        let digitEle = document.querySelector('.digit');
+        let digitEle = document.querySelector('.digit.cart');
         digitEle.innerHTML = cartProducts.length;
         
         if (cartProducts.length === 0) {
