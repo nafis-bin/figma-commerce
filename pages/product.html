@@ -474,6 +474,8 @@
             let titleElement = document.querySelector('.prod-description > p');
             let imgElement = document.querySelector('.main-img');
             let currPrice = document.querySelector('.price-section > .curr');
+            let prevPrice = document.querySelector('.price-section > .prev > s');
+            let discount = document.querySelector('.price-section > .discount');
             let multiplier = Number(document.querySelector('.multiplier').textContent);
             let newPrice = Number(price.substring(1, price.length)) * multiplier;
 
@@ -500,6 +502,10 @@
             currPrice.textContent = price;
             cartPrice.textContent = price;
             total.textContent = price;
+
+
+            var currValue = parseInt(currPrice.textContent.substring(1, currPrice.textContent.length));
+            prevPrice.textContent = `$${Math.round(currValue * 1.33)}.00`;
 
             if (checkBox.checked) {
                 total.textContent = `$${Number(total.textContent.substring(1, total.length)) + 10}.00`;
@@ -530,6 +536,8 @@
                 currPrice.textContent = `$${newPrice}.00`;
                 cartPrice.textContent = `$${newPrice}.00`;
                 total.textContent = `$${newPrice}.00`;
+                var currValue = parseInt(currPrice.textContent.substring(1, currPrice.textContent.length));
+                prevPrice.textContent = `$${Math.round(currValue * 1.33)}.00`;
             }
 
             function removeShit() {
@@ -541,6 +549,8 @@
                     currPrice.textContent = `$${newPrice}.00`;
                     cartPrice.textContent = `$${newPrice}.00`;
                     total.textContent = `$${newPrice}.00`;
+                    var currValue = parseInt(currPrice.textContent.substring(1, currPrice.textContent.length));
+                    prevPrice.textContent = `$${Math.round(currValue * 1.33)}.00`;
                 }
             }
 
