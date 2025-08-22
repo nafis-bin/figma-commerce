@@ -433,6 +433,11 @@
     <script>
         let cartProducts = JSON.parse(window.localStorage.getItem('cart')) || [];
 
+        var user = JSON.parse(window.localStorage.getItem('user'));
+        if (!user) {
+            cartProducts = [];
+        }
+
         console.log(cartProducts.length);
 
         let digitEle = document.querySelector('.digit.cart');

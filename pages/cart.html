@@ -186,6 +186,11 @@
         let layers = document.querySelector('.product-layers');
         let cartProducts = JSON.parse(window.localStorage.getItem('cart')) || [];
 
+        var user = JSON.parse(window.localStorage.getItem('user'));
+        if (!user) {
+            cartProducts = [];
+        }
+
         digitEle.innerHTML = cartProducts.length;
 
         if (cartProducts.length === 0) {

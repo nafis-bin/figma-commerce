@@ -546,6 +546,14 @@ body {
 
 
 .new-arrivals-section .product-cards {
+    /* display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 60px; */
+    display: none;
+}
+
+.new-arrivals-section .product-cards.active {
+    display: block;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 60px;
@@ -571,6 +579,9 @@ body {
     width: 336px;
     height: 244px;
     border-radius: 10px;
+    aspect-ratio: 302 / 403;
+    object-fit: cover;
+    object-position: top;
 }
 
 

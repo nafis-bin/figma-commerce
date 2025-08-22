@@ -475,6 +475,11 @@
 
         let cartProducts = JSON.parse(window.localStorage.getItem('cart')) || [];
 
+        var user = JSON.parse(window.localStorage.getItem('user'));
+        if (!user) {
+            cartProducts = [];
+        }
+
         let digitEle = document.querySelector('.digit.cart');
         digitEle.innerHTML = cartProducts.length;
         
