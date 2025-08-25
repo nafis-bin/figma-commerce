@@ -458,9 +458,10 @@
 
 
 
-        let cards = document.querySelectorAll('.img-card');
+        let cards = document.querySelectorAll('.img-card .img-container');
         cards.forEach(card => {
             card.addEventListener('click', () => {
+                card = card.parentElement;
                 let name = encodeURIComponent(card.dataset.name);
                 let imgUrl = encodeURIComponent(card.dataset.img);
                 let price = encodeURIComponent(card.dataset.price);

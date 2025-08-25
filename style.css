@@ -2213,7 +2213,8 @@ footer p {
 
 .shop-section .single-product .sidebar .img-container {
     width: 70px;
-    height: 93px
+    height: 93px;
+    cursor: pointer;
 }
 
 .shop-section .single-product .sidebar .img-container img {
