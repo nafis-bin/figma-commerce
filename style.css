@@ -1973,6 +1973,10 @@ footer p {
     height: 531px;
 }
 
+.shop-section .img-card.hide{
+    display: none;
+}
+
 .shop-section .img-card .img-container {
     width: 100%;
     height: 402px;
@@ -2048,6 +2052,12 @@ footer p {
     background-color: #fff;
     border-radius: 5px;
     border: 1px solid #8a8a8a;
+    cursor: pointer;
+}
+
+.shop-section .filter-section .size-box.active {
+    background-color: #000;
+    color: #fff;
 }
 
 .shop-section .filter-section .size-box.last {

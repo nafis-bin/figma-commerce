@@ -186,7 +186,7 @@
             </div>
             <div class="img-grid">
 
-                <div class="img-card" data-img="../images/Link ⏵ responsive-image.png" data-name="Rounded Red Hat" data-price="$8.00">
+                <div class="img-card" data-img="../images/Link ⏵ responsive-image.png" data-name="Rounded Red Hat" data-price="$8.00" data-size="S">
                     <div class="img-container">
                         <img src="../images/Link ⏵ responsive-image.png" >
                     </div>
@@ -208,7 +208,7 @@
                         <div class="color-item" style="background-color: #ffd1dc;"></div>
                     </div>
                 </div>
-                <div class="img-card" data-img="../images/Link ⏵ responsive-image (1).png" data-name="Long-Sleeve Coat" data-price="$106.00">
+                <div class="img-card" data-img="../images/Link ⏵ responsive-image (1).png" data-name="Long-Sleeve Coat" data-price="$106.00" data-size="S">
                     <div class="img-container">
                         <img src="../images/Link ⏵ responsive-image (1).png">
                     </div>
@@ -219,7 +219,7 @@
                         <div class="color-item" style="background-color: #c1e1c1;"></div>
                     </div>
                 </div>
-                <div class="img-card" data-img="../images/Link ⏵ responsive-image (2).png" data-name="Boxy Denim Hat" data-price="$25.00">
+                <div class="img-card" data-img="../images/Link ⏵ responsive-image (2).png" data-name="Boxy Denim Hat" data-price="$25.00" data-size="S">
                     <div class="img-container">
                         <img src="../images/Link ⏵ responsive-image (2).png">
                     </div>
@@ -230,7 +230,7 @@
                         <div class="color-item" style="background-color: #063e66;"></div>
                     </div>
                 </div>
-                <div class="img-card" data-img="../images/Link ⏵ responsive-image (3).png" data-name="Linen-Plain Top" data-price="$25.00">
+                <div class="img-card" data-img="../images/Link ⏵ responsive-image (3).png" data-name="Linen-Plain Top" data-price="$25.00" data-size="M">
                     <div class="img-container">
                         <img src="../images/Link ⏵ responsive-image (3).png">
                     </div>
@@ -241,7 +241,7 @@
                         <div class="color-item" style="background-color: #000;"></div>
                     </div>
                 </div>
-                <div class="img-card" data-img="../images/Link ⏵ responsive-image (4).png" data-name="Oversized T-shirt" data-price="$11.00">
+                <div class="img-card" data-img="../images/Link ⏵ responsive-image (4).png" data-name="Oversized T-shirt" data-price="$11.00" data-size="M">
                     <div class="img-container">
                         <img src="../images/Link ⏵ responsive-image (4).png">
                     </div>
@@ -253,7 +253,7 @@
                         <div class="color-item" style="background-color: #fff; box-shadow: 0 1px 2px 0px rgba(0, 0, 0, 0.2);"></div>
                     </div>
                 </div>
-                <div class="img-card" data-img="../images/Link ⏵ responsive-image (5).png" data-name="Polarized Sunglasses" data-price="$18.00">
+                <div class="img-card" data-img="../images/Link ⏵ responsive-image (5).png" data-name="Polarized Sunglasses" data-price="$18.00" data-size="L">
                     <div class="img-container">
                         <img src="../images/Link ⏵ responsive-image (5).png" >
                     </div>
@@ -264,7 +264,7 @@
                         <div class="color-item" style="background-color: #836953;"></div>
                     </div>
                 </div>
-                <div class="img-card" data-img="../images/Link ⏵ responsive-image (6).png" data-name="Rockstar Jacket" data-price="$22.00">
+                <div class="img-card" data-img="../images/Link ⏵ responsive-image (6).png" data-name="Rockstar Jacket" data-price="$22.00" data-size="XL">
                     <div class="img-container">
                         <img src="../images/Link ⏵ responsive-image (6).png">
                     </div>
@@ -275,7 +275,7 @@
                         <div class="color-item" style="background-color: #bedce3;"></div>
                     </div>
                 </div>
-                <div class="img-card" data-img="../images/Link ⏵ responsive-image (7).png" data-name="Dotted Black Dress" data-price="$20.00">
+                <div class="img-card" data-img="../images/Link ⏵ responsive-image (7).png" data-name="Dotted Black Dress" data-price="$20.00" data-size="XL">
                     <div class="img-container">
                         <img src="../images/Link ⏵ responsive-image (7).png" >
                     </div>
@@ -497,6 +497,36 @@
                 }
             })
         })
+
+        // toggle the sizes from filter
+        let sizeBoxes = document.querySelectorAll('.filter-section .size-box');
+        sizeBoxes.forEach(size => {
+            size.onclick = () => {
+                let lastActive = document.querySelector('.filter-section .size-box.active');
+                if (lastActive) {
+                    lastActive.classList.remove('active');
+                }
+
+                size.classList.toggle('active');
+
+                let currSize = size.textContent;
+                let cards = document.querySelectorAll('.img-card');
+
+                cards.forEach(card => {
+                    if (card.classList.contains('hide')) {
+                        card.classList.remove('hide');
+                    }
+
+                    if (card.dataset.size !== currSize) {
+                        card.classList.toggle('hide');
+                    }
+                })
+            }
+        })
+
+
+
+
     </script>
 </body>
 </html>
