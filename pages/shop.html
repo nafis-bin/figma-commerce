@@ -470,18 +470,33 @@
             })
         })
 
+        // toggle the view for brands filter
         let brandIcon = document.querySelector('.brand.icon');
         brandIcon.onclick = () => {
             document.querySelector('.brand-names').classList.toggle('active');
             brandIcon.classList.toggle('flipped');
         }
         
+        // toggle the view for collection filter
         let collectIcon = document.querySelector('.collection.icon');
         collectIcon.onclick = () => {
             document.querySelector('.collection-container').classList.toggle('active');
             collectIcon.classList.toggle('flipped');
         }
         
+
+        // toggle the selected coloritem for products
+        let colorLists = document.querySelectorAll('.color-list');
+        colorLists.forEach(list => {
+            let items = list.querySelectorAll('.color-item');
+            items.forEach(item => {
+                item.onclick = () => {
+                    let prevSelected = list.querySelector('.color-item.active');
+                    prevSelected.classList.remove('active');
+                    item.classList.add('active')
+                }
+            })
+        })
     </script>
 </body>
 </html>
