@@ -2464,7 +2464,7 @@ footer p {
     border-radius: 50%;
 }
 
-.shop-section .single-product .color-box-container:first-child {
+.shop-section .single-product .color-box-container.active {
     background-color: #fff;
     padding: 4px;
     border: 1px solid #000;

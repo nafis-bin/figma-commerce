@@ -172,14 +172,14 @@
                 <div class="color-section">
                     <div class="color-title">Color: Blue</div>
                     <div class="color-box-part">
-                        <div class="color-box-container">
-                            <div class="color-box" style="background-color: #8db4d2;"></div>
+                        <div class="color-box-container active">
+                            <div class="color-box" style="background-color: #8db4d2;" data-color="Blue"></div>
                         </div>
                         <div class="color-box-container">
-                            <div class="color-box" style="background-color: black;"></div>
+                            <div class="color-box" style="background-color: black;" data-color="Black"></div>
                         </div>
                         <div class="color-box-container">
-                            <div class="color-box" style="background-color: #ffd1dc;"></div>
+                            <div class="color-box" style="background-color: #ffd1dc;" data-color="Pink"></div>
                         </div>
 
                     </div>
@@ -737,6 +737,7 @@
             }
         })
 
+        // toggle between sizes
         const boxes = document.querySelectorAll('.size-box');
         boxes.forEach(box => {
             box.onclick = () => {
@@ -745,6 +746,21 @@
                 box.classList.toggle('active');
 
                 document.querySelector('.size-title').textContent = `Size: ${box.textContent}`
+            }
+        })
+
+
+        // toggle between colors
+        const colorBoxes = document.querySelectorAll('.color-box');
+        const colorTitle = document.querySelectorAll('.color-section .color-title');
+        colorBoxes.forEach(colorBox => {
+            colorBox.onclick = () => {
+                let activeColor = document.querySelector('.color-box-container.active');
+                activeColor.classList.remove('active');
+                colorBox.parentElement.classList.add('active');
+
+                console.log(colorBox.dataset.color)
+                colorTitle.textContent = `Color: ${colorBox.dataset.color}`;
             }
         })
     </script>
