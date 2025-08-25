@@ -291,6 +291,7 @@ body {
     padding-top: 122px;
     padding-inline: 50px;
     /* overflow-x: hidden; */
+    overflow-y: hidden;
 }
 
 /* .deals-info {
