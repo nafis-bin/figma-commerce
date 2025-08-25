@@ -75,26 +75,26 @@
         <div class="single-product">
             <div class="sidebar">
                 <div class="sidebar-grid">
-                    <div class="img-container">
-                        <img src="../images/div.swiper-slide.png" alt="slide">
+                    <div class="img-container" data-side-src="../images/Link ⏵ responsive-image.png">
+                        <img src="../images/Link ⏵ responsive-image.png" alt="slide">
                     </div>
-                    <div class="img-container">
-                        <img src="../images/div.swiper-slide (1).png" alt="slide">
+                    <div class="img-container" data-side-src="../images/Link ⏵ responsive-image (1).png">
+                        <img src="../images/Link ⏵ responsive-image (1).png" alt="slide">
                     </div>
-                    <div class="img-container">
-                        <img src="../images/div.swiper-slide (2).png" alt="slide">
+                    <div class="img-container" data-side-src="../images/Link ⏵ responsive-image (2).png">
+                        <img src="../images/Link ⏵ responsive-image (2).png" alt="slide">
                     </div>
-                    <div class="img-container">
-                        <img src="../images/div.swiper-slide (3).png" alt="slide">
+                    <div class="img-container" data-side-src="../images/Link ⏵ responsive-image (3).png">
+                        <img src="../images/Link ⏵ responsive-image (3).png" alt="slide">
                     </div>
-                    <div class="img-container">
-                        <img src="../images/div.swiper-slide (4).png" alt="slide">
+                    <div class="img-container" data-side-src="../images/Link ⏵ responsive-image (4).png">
+                        <img src="../images/Link ⏵ responsive-image (4).png" alt="slide">
                     </div>
-                    <div class="img-container">
-                        <img src="../images/div.swiper-slide (5).png" alt="slide">
+                    <div class="img-container" data-side-src="../images/Link ⏵ responsive-image (5).png">
+                        <img src="../images/Link ⏵ responsive-image (5).png" alt="slide">
                     </div>
-                    <div class="img-container">
-                        <img src="../images/div.swiper-slide (6).png" alt="slide">
+                    <div class="img-container" data-side-src="../images/Link ⏵ responsive-image (6).png">
+                        <img src="../images/Link ⏵ responsive-image (6).png" alt="slide">
                     </div>
                 </div>
             </div>
@@ -761,6 +761,21 @@
 
                 console.log(colorBox.dataset.color)
                 colorTitle.textContent = `Color: ${colorBox.dataset.color}`;
+            }
+        })
+
+
+        const urlParams = new URLSearchParams(window.location.search);
+        let url = decodeURIComponent(urlParams.get('url'));
+
+        const sideImages = document.querySelectorAll('.sidebar-grid .img-container');
+        const mainImg = document.querySelector('.main-img')
+
+        sideImages[0].querySelector('img').src = url;
+        sideImages[0].dataset.sideSrc = url;
+        sideImages.forEach(img => {
+            img.onclick = () => {
+                mainImg.src = img.dataset.sideSrc;
             }
         })
     </script>
