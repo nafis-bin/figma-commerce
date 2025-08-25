@@ -2676,6 +2676,18 @@ footer p {
     gap: 22px;
 }
 
+.mini-cart-section .product-info .img-container {
+    width: 302px;
+    height: 225px;
+}
+
+.mini-cart-section .product-info .img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+
 .mini-cart-section .product-details .prod-title,
 .mini-cart-section .product-details .color-title,
 .mini-cart-section .product-details .prod-price {

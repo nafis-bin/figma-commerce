@@ -598,6 +598,11 @@
             let addCart = document.querySelector('.add-cart-btn');
 
             addCart.onclick = () => {
+                
+                if (!user) {
+                    return;
+                }
+
                 miniCart.classList.toggle('active')
                 overlay.classList.toggle('active')
 
