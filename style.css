@@ -1961,7 +1961,12 @@ footer p {
     height: 34px;
 }
 
+
 .shop-section .models-section .img-grid {
+    display: none;
+}
+
+.shop-section .models-section .img-grid.active {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     column-gap: 12px;

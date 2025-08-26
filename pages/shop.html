@@ -113,11 +113,11 @@
             <div class="prices-section">
                 <div class="price-title">Prices</div>
                 <div class="price-container">
-                    <div class="price-value">$0-$50</div>
-                    <div class="price-value">$50-$100</div>
-                    <div class="price-value">$100-$150</div>
-                    <div class="price-value">$150-$200</div>
-                    <div class="price-value">$300-$400</div>
+                    <div class="price-value" data-min="0" data-max="50">$0-$50</div>
+                    <div class="price-value" data-min="50" data-max="100">$50-$100</div>
+                    <div class="price-value" data-min="100" data-max="150">$100-$150</div>
+                    <div class="price-value" data-min="150" data-max="200">$150-$200</div>
+                    <div class="price-value" data-min="300" data-max="400">$300-$400</div>
                 </div>
             </div>
             <div class="brands-section">
@@ -175,7 +175,7 @@
         </div>
         <div class="models-section">
             <div class="header">
-                <div class="catagory">Best Selling</div>
+                <div class="catagory">Best Sellers</div>
                 <div class="icons">
                     <img src="../images/Button.png" alt="alignment">
                     <img src="../images/Button (1).png" alt="alignment">
@@ -184,7 +184,7 @@
                     <img src="../images/Button (4).png" alt="alignment">
                 </div>
             </div>
-            <div class="img-grid">
+            <div class="img-grid All-Products">
 
                 <div class="img-card" data-img="../images/Link ⏵ responsive-image.png" data-name="Rounded Red Hat" data-price="$8.00" data-size="S">
                     <div class="img-container">
@@ -208,28 +208,267 @@
                         <div class="color-item" style="background-color: #ffd1dc;"></div>
                     </div>
                 </div>
-                <div class="img-card" data-img="../images/Link ⏵ responsive-image (1).png" data-name="Long-Sleeve Coat" data-price="$106.00" data-size="S">
+                <div class="img-card" data-img="../images/Link ⏵ responsive-image (1).png" data-name="Long-Sleeve Coat" data-price="$70.00" data-size="S">
                     <div class="img-container">
                         <img src="../images/Link ⏵ responsive-image (1).png">
                     </div>
                     <div class="product-name">Long-Sleeve Coat</div>
-                    <div class="product-price">$106.00</div>
+                    <div class="product-price">$70.00</div>
                     <div class="color-list">
                         <div class="color-item active" style="background-color: #ebe6db;"></div>
                         <div class="color-item" style="background-color: #c1e1c1;"></div>
                     </div>
                 </div>
-                <div class="img-card" data-img="../images/Link ⏵ responsive-image (2).png" data-name="Boxy Denim Hat" data-price="$25.00" data-size="S">
+                <div class="img-card" data-img="../images/Link ⏵ responsive-image (2).png" data-name="Boxy Denim Hat" data-price="$89.00" data-size="S">
                     <div class="img-container">
                         <img src="../images/Link ⏵ responsive-image (2).png">
                     </div>
                     <div class="product-name">Boxy Denim Hat</div>
+                    <div class="product-price" >$89.00</div>
+                    <div class="color-list">
+                        <div class="color-item active" style="background-color: #b1c5d4;"></div>
+                        <div class="color-item" style="background-color: #063e66;"></div>
+                    </div>
+                </div>
+                <div class="img-card" data-img="../images/Link ⏵ responsive-image (3).png" data-name="Linen-Plain Top" data-price="$125.00" data-size="M">
+                    <div class="img-container">
+                        <img src="../images/Link ⏵ responsive-image (3).png">
+                    </div>
+                    <div class="product-name">Linen-Plain Top</div>
+                    <div class="product-price">$125.00</div>
+                    <div class="color-list">
+                        <div class="color-item active" style="background-color: #c1e1c1;"></div>
+                        <div class="color-item" style="background-color: #000;"></div>
+                    </div>
+                </div>
+                <div class="img-card" data-img="../images/Link ⏵ responsive-image (4).png" data-name="Oversized T-shirt" data-price="$179.00" data-size="M">
+                    <div class="img-container">
+                        <img src="../images/Link ⏵ responsive-image (4).png">
+                    </div>
+                    <div class="product-name">Oversized T-shirt</div>
+                    <div class="product-price">$179.00</div>
+                    <div class="color-list">
+                        <div class="color-item active" style="background-color: #ffd1dc;"></div>
+                        <div class="color-item" style="background-color: #c6aec7;"></div>
+                        <div class="color-item" style="background-color: #fff; box-shadow: 0 1px 2px 0px rgba(0, 0, 0, 0.2);"></div>
+                    </div>
+                </div>
+                <div class="img-card" data-img="../images/Link ⏵ responsive-image (5).png" data-name="Polarized Sunglasses" data-price="$200.00" data-size="L">
+                    <div class="img-container">
+                        <img src="../images/Link ⏵ responsive-image (5).png" >
+                    </div>
+                    <div class="product-name">Polarized Sunglasses</div>
+                    <div class="product-price">$200.00</div>
+                    <div class="color-list">
+                        <div class="color-item active" style="background-color: #000;"></div>
+                        <div class="color-item" style="background-color: #836953;"></div>
+                    </div>
+                </div>
+                <div class="img-card" data-img="../images/Link ⏵ responsive-image (6).png" data-name="Rockstar Jacket" data-price="$349.00" data-size="XL">
+                    <div class="img-container">
+                        <img src="../images/Link ⏵ responsive-image (6).png">
+                    </div>
+                    <div class="product-name">Rockstar Jacket</div>
+                    <div class="product-price">$349.00</div>
+                    <div class="color-list">
+                        <div class="color-item active" style="background-color: #c6aec7;"></div>
+                        <div class="color-item" style="background-color: #bedce3;"></div>
+                    </div>
+                </div>
+                <div class="img-card" data-img="../images/Link ⏵ responsive-image (7).png" data-name="Dotted Black Dress" data-price="$320.00" data-size="XL">
+                    <div class="img-container">
+                        <img src="../images/Link ⏵ responsive-image (7).png" >
+                    </div>
+                    <div class="product-name">Dotted Black Dress</div>
+                    <div class="product-price">$320.00</div>
+                    <div class="color-list">
+                        <div class="color-item active" style="background-color: #063e66;"></div>
+                        <div class="color-item" style="background-color: #000;"></div>
+                        <div class="color-item" style="background-color: #b1c5d4;"></div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="img-grid Best-Sellers active">
+                <div class="img-card" data-img="../images/Link ⏵ responsive-image.png" data-name="Rounded Red Hat" data-price="$8.00" data-size="S">
+                    <div class="img-container">
+                        <img src="../images/Link ⏵ responsive-image.png" >
+                    </div>
+                    <div class="product-name" >Rounded Red Hat</div>
+                    <div class="product-price">$8.00</div>
+                    <div class="color-list">
+                        <div class="color-item active" style="background-color: #ffd700;"></div>
+                        <div class="color-item" style="background-color: #000;"></div>
+                    </div>
+                </div>
+                <div class="img-card" data-img="../images/57.jpg.png" data-name="Linen Blend Shirt" data-price="$17.00">
+                    <div class="img-container">
+                        <img src="../images/57.jpg.png">
+                    </div>
+                    <div class="product-name">Linen Blend Shirt</div>
+                    <div class="product-price">$17.00</div>
+                    <div class="color-list">
+                        <div class="color-item active" style="background-color: #8db4d2;"></div>
+                        <div class="color-item" style="background-color: #ffd1dc;"></div>
+                    </div>
+                </div>
+                <div class="img-card" data-img="../images/Link ⏵ responsive-image (1).png" data-name="Long-Sleeve Coat" data-price="$70.00" data-size="S">
+                    <div class="img-container">
+                        <img src="../images/Link ⏵ responsive-image (1).png">
+                    </div>
+                    <div class="product-name">Long-Sleeve Coat</div>
+                    <div class="product-price">$70.00</div>
+                    <div class="color-list">
+                        <div class="color-item active" style="background-color: #ebe6db;"></div>
+                        <div class="color-item" style="background-color: #c1e1c1;"></div>
+                    </div>
+                </div>
+                <div class="img-card" data-img="../images/Link ⏵ responsive-image (2).png" data-name="Boxy Denim Hat" data-price="$89.00" data-size="S">
+                    <div class="img-container">
+                        <img src="../images/Link ⏵ responsive-image (2).png">
+                    </div>
+                    <div class="product-name">Boxy Denim Hat</div>
+                    <div class="product-price" >$89.00</div>
+                    <div class="color-list">
+                        <div class="color-item active" style="background-color: #b1c5d4;"></div>
+                        <div class="color-item" style="background-color: #063e66;"></div>
+                    </div>
+                </div>
+                <div class="img-card" data-img="../images/Link ⏵ responsive-image (3).png" data-name="Linen-Plain Top" data-price="$125.00" data-size="M">
+                    <div class="img-container">
+                        <img src="../images/Link ⏵ responsive-image (3).png">
+                    </div>
+                    <div class="product-name">Linen-Plain Top</div>
+                    <div class="product-price">$125.00</div>
+                    <div class="color-list">
+                        <div class="color-item active" style="background-color: #c1e1c1;"></div>
+                        <div class="color-item" style="background-color: #000;"></div>
+                    </div>
+                </div>
+                <div class="img-card" data-img="../images/Link ⏵ responsive-image (4).png" data-name="Oversized T-shirt" data-price="$179.00" data-size="M">
+                    <div class="img-container">
+                        <img src="../images/Link ⏵ responsive-image (4).png">
+                    </div>
+                    <div class="product-name">Oversized T-shirt</div>
+                    <div class="product-price">$179.00</div>
+                    <div class="color-list">
+                        <div class="color-item active" style="background-color: #ffd1dc;"></div>
+                        <div class="color-item" style="background-color: #c6aec7;"></div>
+                        <div class="color-item" style="background-color: #fff; box-shadow: 0 1px 2px 0px rgba(0, 0, 0, 0.2);"></div>
+                    </div>
+                </div>
+                <div class="img-card" data-img="../images/Link ⏵ responsive-image (5).png" data-name="Polarized Sunglasses" data-price="$200.00" data-size="L">
+                    <div class="img-container">
+                        <img src="../images/Link ⏵ responsive-image (5).png" >
+                    </div>
+                    <div class="product-name">Polarized Sunglasses</div>
+                    <div class="product-price">$200.00</div>
+                    <div class="color-list">
+                        <div class="color-item active" style="background-color: #000;"></div>
+                        <div class="color-item" style="background-color: #836953;"></div>
+                    </div>
+                </div>
+                <div class="img-card" data-img="../images/Link ⏵ responsive-image (6).png" data-name="Rockstar Jacket" data-price="$349.00" data-size="XL">
+                    <div class="img-container">
+                        <img src="../images/Link ⏵ responsive-image (6).png">
+                    </div>
+                    <div class="product-name">Rockstar Jacket</div>
+                    <div class="product-price">$349.00</div>
+                    <div class="color-list">
+                        <div class="color-item active" style="background-color: #c6aec7;"></div>
+                        <div class="color-item" style="background-color: #bedce3;"></div>
+                    </div>
+                </div>
+                <div class="img-card" data-img="../images/Link ⏵ responsive-image (7).png" data-name="Dotted Black Dress" data-price="$320.00" data-size="XL">
+                    <div class="img-container">
+                        <img src="../images/Link ⏵ responsive-image (7).png" >
+                    </div>
+                    <div class="product-name">Dotted Black Dress</div>
+                    <div class="product-price">$320.00</div>
+                    <div class="color-list">
+                        <div class="color-item active" style="background-color: #063e66;"></div>
+                        <div class="color-item" style="background-color: #000;"></div>
+                        <div class="color-item" style="background-color: #b1c5d4;"></div>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="img-grid Accessories">
+
+                <div class="img-card" data-img="../images/simple-watch-2.jpg" data-name="Seiko Grand" data-price="$25.00" data-size="S">
+                    <div class="img-container">
+                        <img src="../images/simple-watch-2.jpg">
+                    </div>
+                    <div class="product-name">Seiko Grand</div>
                     <div class="product-price" >$25.00</div>
                     <div class="color-list">
                         <div class="color-item active" style="background-color: #b1c5d4;"></div>
                         <div class="color-item" style="background-color: #063e66;"></div>
                     </div>
                 </div>
+                <div class="img-card" data-img="../images/simple-watch-3.jpg" data-name="Casio Ultra" data-price="$156.00" data-size="S">
+                    <div class="img-container">
+                        <img src="../images/simple-watch-3.jpg">
+                    </div>
+                    <div class="product-name">Casio Ultra</div>
+                    <div class="product-price" >$156.00</div>
+                    <div class="color-list">
+                        <div class="color-item active" style="background-color: #b1c5d4;"></div>
+                        <div class="color-item" style="background-color: #063e66;"></div>
+                    </div>
+                </div>
+                <div class="img-card" data-img="../images/simple-watch-6.jpg" data-name="Sports wear" data-price="$349.00" data-size="S">
+                    <div class="img-container">
+                        <img src="../images/simple-watch-6.jpg">
+                    </div>
+                    <div class="product-name">Sports Wear</div>
+                    <div class="product-price" >$349.00</div>
+                    <div class="color-list">
+                        <div class="color-item active" style="background-color: #b1c5d4;"></div>
+                        <div class="color-item" style="background-color: #063e66;"></div>
+                    </div>
+                </div>
+
+                <div class="img-card" data-img="../images/simple-watch-4.jpg" data-name="JACOB & CO" data-price="$300.00" data-size="M">
+                    <div class="img-container">
+                        <img src="../images/simple-watch-4.jpg">
+                    </div>
+                    <div class="product-name">JACOB & CO</div>
+                    <div class="product-price">$300.00</div>
+                    <div class="color-list">
+                        <div class="color-item active" style="background-color: #c1e1c1;"></div>
+                        <div class="color-item" style="background-color: #000;"></div>
+                    </div>
+                </div>
+
+                <div class="img-card" data-img="../images/simple-watch-5.jpg" data-name="Armani" data-price="$348.00" data-size="S">
+                    <div class="img-container">
+                        <img src="../images/simple-watch-5.jpg">
+                    </div>
+                    <div class="product-name">Armani</div>
+                    <div class="product-price">$348.00</div>
+                    <div class="color-list">
+                        <div class="color-item active" style="background-color: #ffd700;"></div>
+                        <div class="color-item" style="background-color: #000;"></div>
+                    </div>
+                </div>
+                
+
+            </div> 
+            <div class="img-grid New-Arrivals">
+
+                <div class="img-card" data-img="../images/Link ⏵ responsive-image (2).png" data-name="Boxy Denim Hat" data-price="$75.00" data-size="S">
+                    <div class="img-container">
+                        <img src="../images/Link ⏵ responsive-image (2).png">
+                    </div>
+                    <div class="product-name">Boxy Denim Hat</div>
+                    <div class="product-price" >$75.00</div>
+                    <div class="color-list">
+                        <div class="color-item active" style="background-color: #b1c5d4;"></div>
+                        <div class="color-item" style="background-color: #063e66;"></div>
+                    </div>
+                </div>
+
                 <div class="img-card" data-img="../images/Link ⏵ responsive-image (3).png" data-name="Linen-Plain Top" data-price="$25.00" data-size="M">
                     <div class="img-container">
                         <img src="../images/Link ⏵ responsive-image (3).png">
@@ -241,53 +480,22 @@
                         <div class="color-item" style="background-color: #000;"></div>
                     </div>
                 </div>
-                <div class="img-card" data-img="../images/Link ⏵ responsive-image (4).png" data-name="Oversized T-shirt" data-price="$11.00" data-size="M">
+
+                <div class="img-card" data-img="../images/Link ⏵ responsive-image.png" data-name="Rounded Red Hat" data-price="$189.00" data-size="S">
                     <div class="img-container">
-                        <img src="../images/Link ⏵ responsive-image (4).png">
+                        <img src="../images/Link ⏵ responsive-image.png" >
                     </div>
-                    <div class="product-name">Oversized T-shirt</div>
-                    <div class="product-price">$11.00</div>
+                    <div class="product-name" >Rounded Red Hat</div>
+                    <div class="product-price">$189.00</div>
                     <div class="color-list">
-                        <div class="color-item active" style="background-color: #ffd1dc;"></div>
-                        <div class="color-item" style="background-color: #c6aec7;"></div>
-                        <div class="color-item" style="background-color: #fff; box-shadow: 0 1px 2px 0px rgba(0, 0, 0, 0.2);"></div>
-                    </div>
-                </div>
-                <div class="img-card" data-img="../images/Link ⏵ responsive-image (5).png" data-name="Polarized Sunglasses" data-price="$18.00" data-size="L">
-                    <div class="img-container">
-                        <img src="../images/Link ⏵ responsive-image (5).png" >
-                    </div>
-                    <div class="product-name">Polarized Sunglasses</div>
-                    <div class="product-price">$18.00</div>
-                    <div class="color-list">
-                        <div class="color-item active" style="background-color: #000;"></div>
-                        <div class="color-item" style="background-color: #836953;"></div>
-                    </div>
-                </div>
-                <div class="img-card" data-img="../images/Link ⏵ responsive-image (6).png" data-name="Rockstar Jacket" data-price="$22.00" data-size="XL">
-                    <div class="img-container">
-                        <img src="../images/Link ⏵ responsive-image (6).png">
-                    </div>
-                    <div class="product-name">Rockstar Jacket</div>
-                    <div class="product-price">$22.00</div>
-                    <div class="color-list">
-                        <div class="color-item active" style="background-color: #c6aec7;"></div>
-                        <div class="color-item" style="background-color: #bedce3;"></div>
-                    </div>
-                </div>
-                <div class="img-card" data-img="../images/Link ⏵ responsive-image (7).png" data-name="Dotted Black Dress" data-price="$20.00" data-size="XL">
-                    <div class="img-container">
-                        <img src="../images/Link ⏵ responsive-image (7).png" >
-                    </div>
-                    <div class="product-name">Dotted Black Dress</div>
-                    <div class="product-price">$20.00</div>
-                    <div class="color-list">
-                        <div class="color-item active" style="background-color: #063e66;"></div>
+                        <div class="color-item active" style="background-color: #ffd700;"></div>
                         <div class="color-item" style="background-color: #000;"></div>
-                        <div class="color-item" style="background-color: #b1c5d4;"></div>
                     </div>
                 </div>
-            </div>
+                
+
+            </div> 
+            
         </div>
     </main>
 
@@ -524,7 +732,49 @@
             }
         })
 
+        // clicking the price filter sorts products on pricing
+        let filterPrices = document.querySelectorAll('.price-value');
+        filterPrices.forEach(price => {
 
+            price.onclick = () => {
+                let min = parseInt(price.dataset.min);
+                let max = parseInt(price.dataset.max);
+
+
+                const activeCards = document.querySelectorAll('.models-section .img-grid.active .img-card');
+                activeCards.forEach(card => {
+                    let price = parseInt(card.dataset.price.slice(1, card.dataset.price.length));
+
+                    // console.table({min, max, price})
+
+
+                    // reset every time
+                    card.style.display = 'block';
+                    if (price > max || price < min) {
+                        card.style.display = 'none';
+                    }
+                })
+
+            }
+        })
+
+        // switching between collections using filter
+        const grids = document.querySelectorAll('.models-section .img-grid');
+        const collectionItems = document.querySelectorAll('.collection-container .collection-item');
+
+        collectionItems.forEach(cItem => {
+            cItem.onclick = () => {
+                const activeGrid = document.querySelector('.models-section .img-grid.active');
+                activeGrid.classList.toggle('active');
+
+                let catagoryTitle = document.querySelector('.models-section .catagory');
+                catagoryTitle.textContent = cItem.textContent;
+
+                let title = cItem.textContent.split(' ').join('-');
+                document.querySelector(`.models-section .img-grid.${title}`).classList.toggle('active');
+
+            }
+        })
 
 
     </script>
