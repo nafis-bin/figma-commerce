@@ -2608,8 +2608,8 @@ footer p {
     padding: auto;
     border-radius: 5px;
     border: 1px solid #000;
-    transition: background-color 0.3s ease;
-    transition: color 0.3s ease;
+    transition: background-color 0.1s ease;
+    transition: color 0.1s ease;
 }
 
 .shop-section .single-product .good-links {
@@ -3244,6 +3244,10 @@ footer p {
     background-color: #f7f7f7;
 }
 
+
+.checkout-section .product-dets .discount-section .discount-btn:is(:hover, :focus-visible) {
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.3);
+}
 
 .checkout-section .product-dets .discount-section .discount-btn {
     width: 161px;
