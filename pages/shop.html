@@ -741,6 +741,12 @@
                 let min = parseInt(price.dataset.min);
                 let max = parseInt(price.dataset.max);
 
+                let prev = document.querySelector('.prices-section .price-value.active');
+                if (prev) {
+                    prev.classList.remove('active');
+                }
+
+                price.classList.add('active')
 
                 const activeCards = document.querySelectorAll('.models-section .img-grid.active .img-card');
                 activeCards.forEach(card => {
@@ -774,11 +780,20 @@
                 let title = cItem.textContent.split(' ').join('-');
                 document.querySelector(`.models-section .img-grid.${title}`).classList.toggle('active');
 
+
+                let prev = document.querySelector('.collection-container .collection-item.active');
+                if (prev) {
+                    prev.classList.remove('active');
+                }
+
+                cItem.classList.add('active');
+
             }
         })
 
 
 
+        // peaky blinder shop button
         let peakyBtn = document.querySelector('.peaky-info .button');
         peakyBtn.onclick = () => {
             window.location.href = './shop.html';
